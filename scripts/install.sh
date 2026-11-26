@@ -1,0 +1,274 @@
+#!/usr/bin/env bash
+#
+# blu CLI Installation Script
+# This script downloads and installs the latest version of the blu CLI
+# for Linux and macOS systems.
+#
+# Usage:
+#   curl -fsSL https://raw.githubusercontent.com/blu-direct/blu-cli/main/scripts/install.sh | bash
+#   or
+#   wget -qO- https://raw.githubusercontent.com/blu-direct/blu-cli/main/scripts/install.sh | bash
+#
+# Options:
+#   BLU_INSTALL_DIR - Installation directory (default: /usr/local/bin)
+#   BLU_VERSION     - Specific version to install (default: latest)
+#
+
+set -eo pipefail
+
+# Configuration
+REPO="blu-direct/blu-cli"
+DEFAULT_INSTALL_DIR="/usr/local/bin"
+USER_INSTALL_DIR="$HOME/.local/bin"
+VERSION="${BLU_VERSION:-latest}"
+BINARY_NAME="blu"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Helper functions. Logs go to stderr so command substitutions capture only
+# the value a function prints.
+log_info() {
+    echo -e "${GREEN}[INFO]${NC} $1" >&2
+}
+
+log_warn() {
+    echo -e "${YELLOW}[WARN]${NC} $1" >&2
+}
+
+log_error() {
+    echo -e "${RED}[ERROR]${NC} $1" >&2
+}
+
+download() {
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "$1" -o "$2"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -q "$1" -O "$2"
+    else
+        log_error "curl or wget is required to download the CLI"
+        exit 1
+    fi
+}
+
+verify_checksum() {
+    local file="$1" name="$2" checksums="$3" expected actual
+    expected=$(awk -v name="$name" '$2 == name || $2 == "*" name { print $1; exit }' "$checksums")
+    if [ -z "$expected" ]; then
+        log_error "checksums.txt has no entry for $name"
+        exit 1
+    fi
+    if command -v sha256sum >/dev/null 2>&1; then
+        actual=$(sha256sum "$file" | awk '{ print $1 }')
+    elif command -v shasum >/dev/null 2>&1; then
+        actual=$(shasum -a 256 "$file" | awk '{ print $1 }')
+    else
+        log_error "sha256sum or shasum is required to verify the download"
+        exit 1
+    fi
+    if [ "$actual" != "$expected" ]; then
+        log_error "Checksum mismatch for $name: expected $expected, got $actual"
+        exit 1
+    fi
+    log_info "Checksum verified"
+}
+
+# Detect operating system
+detect_os() {
+    local os uname_output
+    uname_output=$(uname -s)
+    case "$uname_output" in
+        Linux*)     os="Linux" ;;
+        Darwin*)    os="Darwin" ;;
+        CYGWIN*|MINGW*|MSYS*)    os="Windows" ;;
+        *)
+            log_error "Unsupported operating system: $uname_output"
+            exit 1
+            ;;
+    esac
+    echo "$os"
+}
+
+# Detect architecture
+detect_arch() {
+    local arch
+    case "$(uname -m)" in
+        x86_64|amd64)   arch="x86_64" ;;
+        aarch64|arm64)  arch="arm64" ;;
+        *)
+            log_error "Unsupported architecture: $(uname -m)"
+            exit 1
+            ;;
+    esac
+    echo "$arch"
+}
+
+# Get latest version from GitHub
+get_latest_version() {
+    local latest_url="https://api.github.com/repos/${REPO}/releases/latest"
+    local version
+
+    if command -v curl >/dev/null 2>&1; then
+        version=$(curl -fsSL "$latest_url" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') || version=""
+    elif command -v wget >/dev/null 2>&1; then
+        version=$(wget -qO- "$latest_url" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') || version=""
+    else
+        log_error "curl or wget is required to download the CLI"
+        exit 1
+    fi
+
+    if [ -z "$version" ]; then
+        log_error "Could not determine the latest release from $latest_url. Set BLU_VERSION to install a specific version."
+        exit 1
+    fi
+    echo "$version"
+}
+
+# Determine installation directory
+get_install_dir() {
+    # If user specified a directory, use it
+    if [ -n "${BLU_INSTALL_DIR}" ]; then
+        echo "${BLU_INSTALL_DIR}"
+        return
+    fi
+
+    # Use /usr/local/bin if it is writable, or can be created when missing
+    if [ -d "$DEFAULT_INSTALL_DIR" ]; then
+        if [ -w "$DEFAULT_INSTALL_DIR" ]; then
+            echo "$DEFAULT_INSTALL_DIR"
+            return
+        fi
+    elif [ -w "$(dirname "$DEFAULT_INSTALL_DIR")" ]; then
+        echo "$DEFAULT_INSTALL_DIR"
+        return
+    fi
+
+    # Fall back to user directory
+    log_info "No write access to $DEFAULT_INSTALL_DIR, using $USER_INSTALL_DIR instead"
+    echo "$USER_INSTALL_DIR"
+}
+
+# Download and install
+install_cli() {
+    local INSTALL_DIR os arch
+    INSTALL_DIR=$(get_install_dir)
+    os=$(detect_os)
+    arch=$(detect_arch)
+
+    log_info "Detected OS: $os"
+    log_info "Detected Architecture: $arch"
+    log_info "Installation directory: $INSTALL_DIR"
+
+    # Get version
+    if [ "$VERSION" = "latest" ]; then
+        VERSION=$(get_latest_version)
+        log_info "Latest version: $VERSION"
+    fi
+
+    # Construct download URL based on OS
+    local archive_name
+    local archive_format
+    if [ "$os" = "Windows" ]; then
+        archive_name="${BINARY_NAME}_${os}_${arch}.zip"
+        archive_format="zip"
+    else
+        archive_name="${BINARY_NAME}_${os}_${arch}.tar.gz"
+        archive_format="tar.gz"
+    fi
+
+    local download_url="https://github.com/${REPO}/releases/download/${VERSION}/${archive_name}"
+
+    log_info "Downloading from: $download_url"
+
+    # Create temporary directory
+    tmp_dir=$(mktemp -d) || exit 1
+    trap 'rm -rf -- "$tmp_dir"' EXIT
+
+    # Download archive
+    if ! download "$download_url" "$tmp_dir/$archive_name"; then
+        log_error "Failed to download from $download_url"
+        exit 1
+    fi
+
+    log_info "Download complete"
+
+    local checksums_url="https://github.com/${REPO}/releases/download/${VERSION}/checksums.txt"
+    if ! download "$checksums_url" "$tmp_dir/checksums.txt"; then
+        log_error "Failed to download checksums from $checksums_url"
+        exit 1
+    fi
+    verify_checksum "$tmp_dir/$archive_name" "$archive_name" "$tmp_dir/checksums.txt"
+
+    # Extract archive based on format
+    log_info "Extracting archive..."
+    if [ "$archive_format" = "zip" ]; then
+        if command -v unzip >/dev/null 2>&1; then
+            unzip -q "$tmp_dir/$archive_name" -d "$tmp_dir"
+        else
+            log_error "unzip is required to extract the archive. Please install unzip and try again."
+            exit 1
+        fi
+    else
+        tar -xzf "$tmp_dir/$archive_name" -C "$tmp_dir"
+    fi
+
+    # Create install directory if it doesn't exist
+    if [ ! -d "$INSTALL_DIR" ]; then
+        log_info "Creating installation directory: $INSTALL_DIR"
+        mkdir -p "$INSTALL_DIR" || {
+            log_error "Failed to create $INSTALL_DIR. Try running with sudo or set BLU_INSTALL_DIR to a writable location."
+            exit 1
+        }
+    fi
+
+    # Install binary (Windows binaries have .exe extension)
+    local source_binary="$tmp_dir/$BINARY_NAME"
+    local target_binary="$INSTALL_DIR/$BINARY_NAME"
+
+    if [ "$os" = "Windows" ]; then
+        source_binary="$tmp_dir/${BINARY_NAME}.exe"
+        target_binary="$INSTALL_DIR/${BINARY_NAME}.exe"
+    fi
+
+    log_info "Installing to $target_binary..."
+    if ! mv "$source_binary" "$target_binary"; then
+        log_error "Failed to install to $INSTALL_DIR. Try running with sudo or set BLU_INSTALL_DIR to a writable location."
+        exit 1
+    fi
+
+    # Make executable (not needed on Windows, but doesn't hurt)
+    chmod +x "$target_binary" 2>/dev/null || true
+
+    log_info "blu ${VERSION} has been installed to $target_binary"
+
+    # Verify installation
+    local cmd_to_check="$BINARY_NAME"
+    if [ "$os" = "Windows" ]; then
+        cmd_to_check="${BINARY_NAME}.exe"
+    fi
+
+    if command -v "$cmd_to_check" >/dev/null 2>&1; then
+        log_info "Installation successful! Run '$BINARY_NAME --help' to get started."
+    else
+        log_warn "Installation complete, but $BINARY_NAME is not in your PATH."
+        if [ "$os" = "Windows" ]; then
+            log_warn "Add $INSTALL_DIR to your PATH environment variable."
+        else
+            log_warn "Add $INSTALL_DIR to your PATH by adding this to your ~/.bashrc or ~/.zshrc:"
+            log_warn "  export PATH=\"\$PATH:$INSTALL_DIR\""
+            log_warn ""
+            log_warn "Then run: source ~/.bashrc  # or source ~/.zshrc"
+        fi
+    fi
+}
+
+# Main execution
+main() {
+    log_info "Installing blu CLI..."
+    install_cli
+}
+
+main

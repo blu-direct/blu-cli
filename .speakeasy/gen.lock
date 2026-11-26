@@ -1,0 +1,1940 @@
+lockVersion: 2.0.0
+id: 5be08a94-978c-4bf9-a52b-ea2c020729f0
+management:
+  docChecksum: 7f97299c82242ac3906eb0422a8bf0e6
+  docVersion: "2026-10-11"
+  speakeasyVersion: internal
+  generationVersion: internal
+  releaseVersion: 0.1.0
+  configChecksum: cff700984ed95241522ad9797359ce4c
+  repoURL: https://github.com/blu-direct/blu-cli
+  installationURL: https://github.com/blu-direct/blu-cli
+  published: true
+features:
+  cli:
+    constsAndDefaults: 0.0.1
+    core: 0.9.43
+    globalSecurity: 0.1.1
+    globalServerURLs: 0.1.0
+    inputOutputModels: 0.0.0
+    responseFormat: 0.1.2
+    unions: 0.1.3
+    webhooks: 0.0.0
+trackedFiles:
+  .gitattributes:
+    last_write_checksum: sha1:84b0115789fc3ea52e31df701d8a27f76077e29f
+  .github/workflows/release.yaml:
+    last_write_checksum: sha1:3dc7603599c589ce5f9f84fad1e7026eb1197583
+  .goreleaser.yaml:
+    last_write_checksum: sha1:edd3dec8168af3454d134adcce54005890afbf6f
+  LICENSE:
+    last_write_checksum: sha1:0aa444e78acfd56e40a385bef50a8c1aa7812082
+  NOTICE:
+    last_write_checksum: sha1:6dab8b069b7b6dba564f33881cc3c28a73a61aba
+  USAGE.md:
+    last_write_checksum: sha1:a2ffcea478461da91cd979df877babb8d9aa730e
+  cmd/blu/main.go:
+    last_write_checksum: sha1:3c48801f74abf29640a568ed268d02b457d51628
+  cmd/gendocs/main.go:
+    last_write_checksum: sha1:95f6d317f61105d1f25e7a2fd3309126caddb851
+  cmd/gendocs/main_test.go:
+    last_write_checksum: sha1:6b85d1b3868a9a462f138722da0c0c22cb2dd30a
+  go.mod:
+    last_write_checksum: sha1:e47d86715864f9b9ba73957583ab81611c24806c
+  internal/cli/agentes/createagent.go:
+    last_write_checksum: sha1:7290ebd2b85242e73fa86659b3b19c13710bd0c1
+  internal/cli/agentes/deleteagent.go:
+    last_write_checksum: sha1:215de6499f56c74834ea4afdf94946d646e3c621
+  internal/cli/agentes/getagent.go:
+    last_write_checksum: sha1:8f6967928b423bb3430c923405d3fc97c037b705
+  internal/cli/agentes/listagents.go:
+    last_write_checksum: sha1:946c6d267a6ae863c165e5730c65b8b833623370
+  internal/cli/agentes/root.go:
+    last_write_checksum: sha1:3f9292ca5ffa04f17f66bd89ef4d424437fedb35
+  internal/cli/agentes/simulateagent.go:
+    last_write_checksum: sha1:696e4def40325f35e1788833e8a1c8c93766f084
+  internal/cli/agentes/suggestagentinstructions.go:
+    last_write_checksum: sha1:7fdd4a96c392335f42aac708b995a9adddba82b3
+  internal/cli/agentes/updateagent.go:
+    last_write_checksum: sha1:e57fd5b7bf8f3f11176840fe5fc6de7fe248865c
+  internal/cli/auth.go:
+    last_write_checksum: sha1:45ae1bcf24b0459d06142173b2ae8660042435e6
+  internal/cli/campanhas/createbroadcast.go:
+    last_write_checksum: sha1:33e9625857de7e2dbdc9adb92c208c460cee9c27
+  internal/cli/campanhas/getbroadcast.go:
+    last_write_checksum: sha1:197a47b58de583bf9fdc044133aa36abf740360f
+  internal/cli/campanhas/listbroadcastrecipients.go:
+    last_write_checksum: sha1:a4415566242b5321bdaa2f89542cf97b4249c575
+  internal/cli/campanhas/listbroadcasts.go:
+    last_write_checksum: sha1:a4e1a28a36b3c2c097681dee61213aa4c5e495bf
+  internal/cli/campanhas/root.go:
+    last_write_checksum: sha1:a6ce8535bbee22f8593e262b08552fbbc32dd6fd
+  internal/cli/campanhas/updatebroadcast.go:
+    last_write_checksum: sha1:88bcf6da23f519de2b4bcb834a4994d47beb61e3
+  internal/cli/campospersonalizados/createcustomfield.go:
+    last_write_checksum: sha1:60de8ebc7b1c225d0da9f6c086eaa2337ef31db8
+  internal/cli/campospersonalizados/deletecustomfield.go:
+    last_write_checksum: sha1:695775bdbb3ed9312d6fdbd452863fb3aff91569
+  internal/cli/campospersonalizados/listcustomfields.go:
+    last_write_checksum: sha1:7b56fc7610d87f33892d96e94a43ecc2e68c593a
+  internal/cli/campospersonalizados/reordercustomfields.go:
+    last_write_checksum: sha1:247faca0c8b26b82c788dac853cebf01c2e9630c
+  internal/cli/campospersonalizados/root.go:
+    last_write_checksum: sha1:a85e25e3a469a06450d43163b37497fa057e9b78
+  internal/cli/campospersonalizados/updatecustomfield.go:
+    last_write_checksum: sha1:4850e1aa82701a6592dbf4f2ff08d0dce59948ac
+  internal/cli/cards/createcard.go:
+    last_write_checksum: sha1:20692fbabc67e1f021f7dd99e955dcd19b1aa3d0
+  internal/cli/cards/deletecard.go:
+    last_write_checksum: sha1:dfe3966ad14e6b8d55c95cda191d2662d5c7c413
+  internal/cli/cards/listcards.go:
+    last_write_checksum: sha1:1a5ad385572d461b5f5228157cc366630b156735
+  internal/cli/cards/root.go:
+    last_write_checksum: sha1:67dbb4440786844967e151c7ce84c7a338c80d33
+  internal/cli/cards/updatecard.go:
+    last_write_checksum: sha1:0267003509b781042eb643a626afb68419c0d1bb
+  internal/cli/configure.go:
+    last_write_checksum: sha1:5332f9caea5c27efdd56ce6228610ef5d547df5f
+  internal/cli/conta/getaccount.go:
+    last_write_checksum: sha1:9d577534e6fe5c061bedefa90d810cac0a069e66
+  internal/cli/conta/root.go:
+    last_write_checksum: sha1:eca11acfc913db79c9493672df0e762dbc97e681
+  internal/cli/contatos/createcontact.go:
+    last_write_checksum: sha1:fb3af30f5e4c77d7a11a33e2b2fab9a440181776
+  internal/cli/contatos/deletecontact.go:
+    last_write_checksum: sha1:9f6ac81cab438d4eb0ea7f8623fa9416dac12d95
+  internal/cli/contatos/getcontact.go:
+    last_write_checksum: sha1:d0ec0b1b1136af5a51b1438d1a738b8bbf5ec67a
+  internal/cli/contatos/importcontacts.go:
+    last_write_checksum: sha1:db50500a8766677ba9b8591fb32ef72584b9a095
+  internal/cli/contatos/listcontacts.go:
+    last_write_checksum: sha1:39ad932968f932e56d3496e9441bd51b0549bce3
+  internal/cli/contatos/root.go:
+    last_write_checksum: sha1:29d4a2ceae7ab2aeb1f0a3e503acb77f85f51e50
+  internal/cli/contatos/updatecontact.go:
+    last_write_checksum: sha1:7d3c2c441b4f4d78023b30b5e57da654ad91b5cd
+  internal/cli/conversas/cancelscheduledmessage.go:
+    last_write_checksum: sha1:8e7c5cc1a342f3178963ee18c299e5838acf80ca
+  internal/cli/conversas/createchat.go:
+    last_write_checksum: sha1:66070c1a8821115bdc71c2e8e72cab2770f48706
+  internal/cli/conversas/deletememory.go:
+    last_write_checksum: sha1:4d1a2e3417b7eabece6fe6eb8f9fb6dc64eaaa83
+  internal/cli/conversas/getchat.go:
+    last_write_checksum: sha1:5ee3e26478cd4ecec351843818bf00a6dde3125e
+  internal/cli/conversas/listchats.go:
+    last_write_checksum: sha1:5f269ca2351ae6d91f69eb5207ad0e7da41ddb73
+  internal/cli/conversas/listmemories.go:
+    last_write_checksum: sha1:399211b4d7df282bc3a3ebac71cf5184f11629e5
+  internal/cli/conversas/listscheduledmessages.go:
+    last_write_checksum: sha1:45bee01f130542638c76ab79653b38f7e65223cb
+  internal/cli/conversas/root.go:
+    last_write_checksum: sha1:e91c1fb3c36d278ccd998fd2a8cc8eb07bc0dd52
+  internal/cli/conversas/updatechat.go:
+    last_write_checksum: sha1:876a9ba4d50732faac41800c834dc6eea5e85ce9
+  internal/cli/custos/getcosts.go:
+    last_write_checksum: sha1:d65aee906e861b54a9735cb562b0692cfe563df3
+  internal/cli/custos/root.go:
+    last_write_checksum: sha1:ef9654e110d8c7233dbf13ab5b2ce235718f75ca
+  internal/cli/endpointsdewebhook/createwebhookendpoint.go:
+    last_write_checksum: sha1:5865dbbdf07f34f94d78e2476ac7128c33c99af0
+  internal/cli/endpointsdewebhook/deletewebhookendpoint.go:
+    last_write_checksum: sha1:02d3e0f4f80a4667fe36e37aa77d2ed1d8895ced
+  internal/cli/endpointsdewebhook/getwebhookendpoint.go:
+    last_write_checksum: sha1:66fb7d4998052077df52195698a27b06dab7a629
+  internal/cli/endpointsdewebhook/listwebhookendpoints.go:
+    last_write_checksum: sha1:3a68eb5233cc7ee1ee0a31d068580f950aefd7ec
+  internal/cli/endpointsdewebhook/root.go:
+    last_write_checksum: sha1:bb2fca693835bf8fa4dd554e327c1c359fa7597e
+  internal/cli/endpointsdewebhook/updatewebhookendpoint.go:
+    last_write_checksum: sha1:03cd3969be82e7bcd269232019bbf710ac20bfe1
+  internal/cli/funis/createpipeline.go:
+    last_write_checksum: sha1:e862ad5444f3204f93cfe276d7955a667dff8023
+  internal/cli/funis/createstage.go:
+    last_write_checksum: sha1:0d2104b936b31e647f7bbb2661ce906235a8f578
+  internal/cli/funis/createtag.go:
+    last_write_checksum: sha1:36e796bb1e2b64b156a5e96913cd6c647cb45395
+  internal/cli/funis/deletepipeline.go:
+    last_write_checksum: sha1:459bc79bc9c4301e0cdd6d1b694b1c0f72b62002
+  internal/cli/funis/deletestage.go:
+    last_write_checksum: sha1:e05f8a52e51bb7b1ccef36796148f92867d24a67
+  internal/cli/funis/deletetag.go:
+    last_write_checksum: sha1:b3710d80c398db3a0c2e4271f86af42324bb8a2a
+  internal/cli/funis/getpipeline.go:
+    last_write_checksum: sha1:5ad9e48ed102d7a1efb9109af664bf8acd027e87
+  internal/cli/funis/listpipelines.go:
+    last_write_checksum: sha1:3d1f3aaacedb93f690acc99445be3e9962beea6a
+  internal/cli/funis/reorderstages.go:
+    last_write_checksum: sha1:b8ddcff6f33e6e06dff31169fcac44da382004dd
+  internal/cli/funis/root.go:
+    last_write_checksum: sha1:92ac34c58cca57d5ed0e2d0ea5f5c89c6464c726
+  internal/cli/funis/updatepipeline.go:
+    last_write_checksum: sha1:0ece6fdbd2bf784ca54f2b58bf686004e2d146ab
+  internal/cli/funis/updatestage.go:
+    last_write_checksum: sha1:ad5c6e561993922d82aa26d84aeac334fc1b952f
+  internal/cli/funis/updatetag.go:
+    last_write_checksum: sha1:d04a7ecf451ff88b0442645b94f4fae88358ff25
+  internal/cli/masking.go:
+    last_write_checksum: sha1:fdc9b1408bbf3e81c8e3e2a405b0bf5d55d288fe
+  internal/cli/mensagens/deletemessage.go:
+    last_write_checksum: sha1:2adb073983c269cf4435953821583a3c2863f1b3
+  internal/cli/mensagens/getmessage.go:
+    last_write_checksum: sha1:b5ed6185c8bc6ede1fe4288f0b6e3aace62f4075
+  internal/cli/mensagens/listmessages.go:
+    last_write_checksum: sha1:a7ded5ad31d546957d2ca34021c35355caac8635
+  internal/cli/mensagens/root.go:
+    last_write_checksum: sha1:76295263b11fd804b2270f4c64252caab0ece5ac
+  internal/cli/mensagens/sendmessage.go:
+    last_write_checksum: sha1:e48239f7f500657dd0b8be3805047618bd30ba2b
+  internal/cli/midia/createmedia.go:
+    last_write_checksum: sha1:8e911cc3a7d372bb0793598018c9990ea79b3057
+  internal/cli/midia/getmedia.go:
+    last_write_checksum: sha1:e0cdcfe8b37081bab133f805f7e383f47c9014e6
+  internal/cli/midia/root.go:
+    last_write_checksum: sha1:066c6d77bb9d693eedafc1d82c665fbb0ba41e36
+  internal/cli/modelosdemensagem/createmessagetemplate.go:
+    last_write_checksum: sha1:5040db9bbc179239316b20eff3af8d895ac7ae2f
+  internal/cli/modelosdemensagem/deletemessagetemplate.go:
+    last_write_checksum: sha1:00d6802c5be7c37d44a5954e71f85312d29eb752
+  internal/cli/modelosdemensagem/getmessagetemplate.go:
+    last_write_checksum: sha1:2d492945f40b035114003fe9f1c4a09dd16076bb
+  internal/cli/modelosdemensagem/listmessagetemplates.go:
+    last_write_checksum: sha1:d96cc6b159c12c10dd79271b0644e622c1d21842
+  internal/cli/modelosdemensagem/root.go:
+    last_write_checksum: sha1:b73212e54ea5be655ac566de2a7a3b5ff5c4d37e
+  internal/cli/modelosdemensagem/syncmessagetemplates.go:
+    last_write_checksum: sha1:ffa68335c63ee4fcc46fc44a7bc75665b9cb728f
+  internal/cli/numeros/getcampaignrisk.go:
+    last_write_checksum: sha1:390909ef688720c1d2ab812ca1e5710761cd5de6
+  internal/cli/numeros/getphonenumber.go:
+    last_write_checksum: sha1:46eba3b4c6377c2e5fa8c8f27b0d18a1ee109e2d
+  internal/cli/numeros/listphonenumbers.go:
+    last_write_checksum: sha1:57586a7e30868be331ed8cda2db32d5f897a3fb8
+  internal/cli/numeros/root.go:
+    last_write_checksum: sha1:fe2b80b051b7bd54c3b47e742209358f40374b57
+  internal/cli/numeros/updatephonenumber.go:
+    last_write_checksum: sha1:faf83c25f73fb28fe2d940bbb5114d6ec658433c
+  internal/cli/root.go:
+    last_write_checksum: sha1:1957802b22c87d37640745904d1eabcc44414fa1
+  internal/cli/version.go:
+    last_write_checksum: sha1:4dea93a2113ab123f27f310c84a2de59526ec14c
+  internal/cli/whoami.go:
+    last_write_checksum: sha1:1d784f50a1eb856c428f6a59e1865b650f16ff8e
+  internal/client/client.go:
+    last_write_checksum: sha1:b5750435af817aef9e35f84b8981c5c152f850fe
+  internal/client/client_test.go:
+    last_write_checksum: sha1:82114e47e1d9cbaea24b611d4cbf148e7c7f3286
+  internal/client/diagnostics.go:
+    last_write_checksum: sha1:499a4999634c5fee82fa1d1e5251d878f15d4801
+  internal/clierrors/clierrors.go:
+    last_write_checksum: sha1:f85133d442baa7deb78547aa3f30766131b6753f
+  internal/config/config.go:
+    last_write_checksum: sha1:f9be7b8fdfc331b398c334a073d984ed90e662af
+  internal/config/keyring.go:
+    last_write_checksum: sha1:d8b51d505677733627faf1b20894b237dc95937d
+  internal/explorer/explorer.go:
+    last_write_checksum: sha1:c52a921c2cd1adb0080a029cf4690da452dcb4aa
+  internal/explorer/styles.go:
+    last_write_checksum: sha1:cad8312b58e13d1ef9e28292ef610d530445c3df
+  internal/explorer/tree.go:
+    last_write_checksum: sha1:a4fd8587749175845d49902a9a78b97d8d19a554
+  internal/explorer/tui.go:
+    last_write_checksum: sha1:2ea704fb56ef3f9dc4907a89068d70fb8c5b356f
+  internal/flagutil/dispatch.go:
+    last_write_checksum: sha1:cd4b3df286d39a983174fdcd5b5f9ec53f1d918d
+  internal/flagutil/flags.go:
+    last_write_checksum: sha1:fee57f613d65dd6ad0bb68f17f78e6af0daf5297
+  internal/flagutil/metadata.go:
+    last_write_checksum: sha1:a37f4a575406cbad99abc85eb2bb3b166c2e7361
+  internal/flagutil/preset.go:
+    last_write_checksum: sha1:67b9d02db5575b0ede42d578910eb74066b3e303
+  internal/forms/forms.go:
+    last_write_checksum: sha1:26c5653a70f9431e9cc15bf669126262eb98d73c
+  internal/interactive/interactive.go:
+    last_write_checksum: sha1:66cec05d31bd1e060fe287eb3e0d3aba31926b57
+  internal/interactive/policy.go:
+    last_write_checksum: sha1:9d5c3503d05ab33b9d03137a63f0e31aed02c9c0
+  internal/output/agentmode.go:
+    last_write_checksum: sha1:e0d94c9574d1fd0c156f7a98de11679416693e2f
+  internal/output/classify.go:
+    last_write_checksum: sha1:f772497fcebcfcbaf6fe59bb2d9bd211f53c2f6f
+  internal/output/color.go:
+    last_write_checksum: sha1:1fc5b626978b4b1401fcce0930f8326f2d7721d5
+  internal/output/errortable.go:
+    last_write_checksum: sha1:e0f3ee5c4a74b8b5a80819d697f5347ee77fc287
+  internal/output/exitcodes.go:
+    last_write_checksum: sha1:9e0c2d216c4b06ccda1af7d36e58278264319ef5
+  internal/output/jq.go:
+    last_write_checksum: sha1:cfaf16d11b27cbd1af806ba6369b3d22f83eedea
+  internal/output/outcome.go:
+    last_write_checksum: sha1:3a920a1e442fd34766ed6a14a9b647ed95171894
+  internal/output/output.go:
+    last_write_checksum: sha1:42a4fdc17d5ac19d59fce20b274f9d0c06365397
+  internal/output/output_test.go:
+    last_write_checksum: sha1:f4a7f0cd6373dcead7d1567cff64427bfb329d51
+  internal/output/pretty.go:
+    last_write_checksum: sha1:dbde15e9f795ef735475dcb4f4dafe9be2ddd7ba
+  internal/output/progress.go:
+    last_write_checksum: sha1:eb5dbe3d5dc546edebbb8bbe181c3e8e3a5a22b7
+  internal/sdk/.gitattributes:
+    last_write_checksum: sha1:84b0115789fc3ea52e31df701d8a27f76077e29f
+  internal/sdk/LICENSE:
+    last_write_checksum: sha1:0aa444e78acfd56e40a385bef50a8c1aa7812082
+  internal/sdk/NOTICE:
+    last_write_checksum: sha1:6dab8b069b7b6dba564f33881cc3c28a73a61aba
+  internal/sdk/agentes.go:
+    last_write_checksum: sha1:e661c83f91fc58418b0cf3c028a91c8b6fc5884f
+  internal/sdk/blu.go:
+    last_write_checksum: sha1:c7d129f2843c87a8f34e8b5eb797c45075067047
+  internal/sdk/campanhas.go:
+    last_write_checksum: sha1:3b42f8ca3404f098f33cec2fd0c4e910182fa7fa
+  internal/sdk/campospersonalizados.go:
+    last_write_checksum: sha1:dfd14d0d2c024a4ab1641b6015424379030d4926
+  internal/sdk/cards.go:
+    last_write_checksum: sha1:0d28d12241e52265bfaee343d0f04b9508681673
+  internal/sdk/conta.go:
+    last_write_checksum: sha1:23aa8d2fdddac03347fe44a4f65a0bd71b0a7a55
+  internal/sdk/contatos.go:
+    last_write_checksum: sha1:1367846fd3ad39783d8cf9af301f42422eacbb6a
+  internal/sdk/conversas.go:
+    last_write_checksum: sha1:ecda4fa75d1c295acc2da7fc9cda4d960f5da1cf
+  internal/sdk/custos.go:
+    last_write_checksum: sha1:5b6f436fa8db495ca40c7cb52e79e6dbfcb76ec4
+  internal/sdk/endpointsdewebhook.go:
+    last_write_checksum: sha1:ca1164a6d32f51dacfa594bb843c3c6173d09750
+  internal/sdk/funis.go:
+    last_write_checksum: sha1:a68d06a529328e152e6bced7a103bdee342275c9
+  internal/sdk/mensagens.go:
+    last_write_checksum: sha1:ba8f337046abc7b912ed341d08f6939cbcbc0597
+  internal/sdk/midia.go:
+    last_write_checksum: sha1:96fd0cf0e5f9c437dc9d0ef0170d0fcb22942a6c
+  internal/sdk/modelosdemensagem.go:
+    last_write_checksum: sha1:8b6ff577c79fc254a98a9033215b10dbe18bde09
+  internal/sdk/models/components/account.go:
+    last_write_checksum: sha1:69bc3e29f9fe11fc4ac3771e00a9912fd30bcbb5
+  internal/sdk/models/components/agent.go:
+    last_write_checksum: sha1:0bd4a7320129f9ee70484d742c6e7fc3f618c705
+  internal/sdk/models/components/agentfaqentry.go:
+    last_write_checksum: sha1:23deaaeeb66bbe5e7df3d2a0f0341c23c3182f54
+  internal/sdk/models/components/agentfile.go:
+    last_write_checksum: sha1:6048641a26688aa48055e305f0e9926ee14cbf7a
+  internal/sdk/models/components/agentfollowup.go:
+    last_write_checksum: sha1:977eb831d6eaec7d258d47875e63a8d218d29a93
+  internal/sdk/models/components/agentinstructionsuggestions.go:
+    last_write_checksum: sha1:1e8f5f233d436c35d154918fa2b7fc538034bab8
+  internal/sdk/models/components/agentlist.go:
+    last_write_checksum: sha1:b698bace42ca01112fa19804c9ff5b993bd6091f
+  internal/sdk/models/components/agentmedia.go:
+    last_write_checksum: sha1:5a0f95ade55f07883a5fcd1a828183eb88dca8ce
+  internal/sdk/models/components/agentschedulemessage.go:
+    last_write_checksum: sha1:1bd35408c56b085d560ec0ac4e46428561724e0a
+  internal/sdk/models/components/agentsimulation.go:
+    last_write_checksum: sha1:75815273a3e363c7716dd3ba7f51b1b8c27dc49d
+  internal/sdk/models/components/broadcast.go:
+    last_write_checksum: sha1:8267fbe9c8afed3ae675cdfd2844bbff1b562138
+  internal/sdk/models/components/broadcastlist.go:
+    last_write_checksum: sha1:1a2530904d66934130c70fa83e26b151898860be
+  internal/sdk/models/components/broadcastrecipient.go:
+    last_write_checksum: sha1:92b7cf57addeb5642439fe1f62bca69b3997d03c
+  internal/sdk/models/components/broadcastrecipientlist.go:
+    last_write_checksum: sha1:adfb53dc2c084b1a552e8a6af9351a43d75d6500
+  internal/sdk/models/components/broadcastrecipientsparamsunion.go:
+    last_write_checksum: sha1:f0ff39977651423c3811ff3cf41b16ccf3439020
+  internal/sdk/models/components/broadcastrecipientstatus.go:
+    last_write_checksum: sha1:8ee416f11b5670ffc54bdb055bcb335cd76566ed
+  internal/sdk/models/components/broadcaststats.go:
+    last_write_checksum: sha1:9274228a63dd200f33e8b7a37c4fce67d2be3efb
+  internal/sdk/models/components/broadcaststatus.go:
+    last_write_checksum: sha1:dc00ccd83b3e4b944fadae60cddfec9ede3528e7
+  internal/sdk/models/components/broadcasttransport.go:
+    last_write_checksum: sha1:270a99e0dc79c4fc3848be5f05302e50545f30c7
+  internal/sdk/models/components/campaignrisk.go:
+    last_write_checksum: sha1:0ec26e54373a1cb572f6b35cfbefe684972f7454
+  internal/sdk/models/components/campaignriskfactor.go:
+    last_write_checksum: sha1:20243fc1d816951e70bceb50d885178a15966fcc
+  internal/sdk/models/components/card.go:
+    last_write_checksum: sha1:d55d8043528585bf93ad6d7181593e99ded3f6ee
+  internal/sdk/models/components/cardlist.go:
+    last_write_checksum: sha1:91746cfe2805b1498b7ebdca0ae521e7de430d14
+  internal/sdk/models/components/chat.go:
+    last_write_checksum: sha1:9fa383463b5716f5c2fc18520fed14ad296063c5
+  internal/sdk/models/components/chatlist.go:
+    last_write_checksum: sha1:6ddf1917dfaa9392ce1448acc785e922a3842f82
+  internal/sdk/models/components/contact.go:
+    last_write_checksum: sha1:41c58dbde03b6300243fec2b844b3f188b4c5cf8
+  internal/sdk/models/components/contactimport.go:
+    last_write_checksum: sha1:4185c73abfdf46701d9adfbcc072245f181ad8b5
+  internal/sdk/models/components/contactlist.go:
+    last_write_checksum: sha1:5fe9b69a7b1706138f328354aee3d952fd81b29b
+  internal/sdk/models/components/contactsource.go:
+    last_write_checksum: sha1:407ceaef246a995650a6e5d4f7526d5669dc6824
+  internal/sdk/models/components/costs.go:
+    last_write_checksum: sha1:d2a7e190f9e58db465f908c5ce52a1684d1a7b1d
+  internal/sdk/models/components/customfield.go:
+    last_write_checksum: sha1:079f2379c85b2eafa92352c1fd076d019a347080
+  internal/sdk/models/components/customfieldlist.go:
+    last_write_checksum: sha1:8f055f757bd6268c40445eb765929476c72c694b
+  internal/sdk/models/components/customfieldtype.go:
+    last_write_checksum: sha1:c02f0ca4c69a4acfd959c35a41198214d241e2d4
+  internal/sdk/models/components/customfieldvalues.go:
+    last_write_checksum: sha1:42fa96a555e17e49b5ad3cbae92c5d96803315a6
+  internal/sdk/models/components/enabledevents.go:
+    last_write_checksum: sha1:8c1c5a22893bc258d803fcc96141f1ae255b25b5
+  internal/sdk/models/components/error.go:
+    last_write_checksum: sha1:b629d818615fa098e5b0a3a47f930cc964d429f8
+  internal/sdk/models/components/event.go:
+    last_write_checksum: sha1:772ab7516f6e3746d9a3aa0e2f90ea9c2cfb4f75
+  internal/sdk/models/components/eventtype.go:
+    last_write_checksum: sha1:ba9ed13256cd57963cd3bbf058fe97ecf93947a2
+  internal/sdk/models/components/httpmetadata.go:
+    last_write_checksum: sha1:f7efc9c4c230190236885abeca7f85f5aac99b37
+  internal/sdk/models/components/media.go:
+    last_write_checksum: sha1:a79746e63e7323a8b01d5e83e83b3b701d47c0ef
+  internal/sdk/models/components/mediasource.go:
+    last_write_checksum: sha1:4105ba87d03296a050bbbd9fc0fa3fd4d7301114
+  internal/sdk/models/components/mediasourceoutput.go:
+    last_write_checksum: sha1:48539ea3e523314724793bcd624a1e80ebe49172
+  internal/sdk/models/components/memory.go:
+    last_write_checksum: sha1:f76cc19e321eb8dfef6edcbaa7cf291cec733437
+  internal/sdk/models/components/memorylist.go:
+    last_write_checksum: sha1:49652e394e552377b1e369b13ac416af42bac274
+  internal/sdk/models/components/messagecontext.go:
+    last_write_checksum: sha1:14b6cad540362ebab71f89dbea32a72f6acd17c3
+  internal/sdk/models/components/messagecreateparams.go:
+    last_write_checksum: sha1:ebcbe075a346ba31041fb340da4f70528e00f4b7
+  internal/sdk/models/components/messagedirection.go:
+    last_write_checksum: sha1:514906a73ab1f37be27b4dd9d3a18bb2a8787730
+  internal/sdk/models/components/messageerror.go:
+    last_write_checksum: sha1:31703bbf09db2449956e0b747020dc8857fd811b
+  internal/sdk/models/components/messagelist.go:
+    last_write_checksum: sha1:001e838bf0640ea27a81b3b6e987399ab30fdc47
+  internal/sdk/models/components/messageoutput.go:
+    last_write_checksum: sha1:17525fbf34a021c9ea6287fde23969e789b28fd6
+  internal/sdk/models/components/messagepricing.go:
+    last_write_checksum: sha1:f1437a4a8edf8ee6088e431d45e1ebd362fdf40a
+  internal/sdk/models/components/messagesender.go:
+    last_write_checksum: sha1:70fb9eeb3d12ee7e650748650745299e59f4f0f1
+  internal/sdk/models/components/messagestatus.go:
+    last_write_checksum: sha1:74b31edff9535f9574f4a70ba4e2ebcb41c08584
+  internal/sdk/models/components/messagetemplate.go:
+    last_write_checksum: sha1:06f0dce6563e8360e6cd9dc632a62b6a7f6770a2
+  internal/sdk/models/components/messagetemplatelist.go:
+    last_write_checksum: sha1:c7d423b3d86fab6977554e370d4d73da8cf2c4f5
+  internal/sdk/models/components/messagetemplatesync.go:
+    last_write_checksum: sha1:ce55c561836d641fe82a3db3971c8d4cd1eea3c9
+  internal/sdk/models/components/orderparams.go:
+    last_write_checksum: sha1:eedcc809eeca68bf9916f82ec81d688f9739b056
+  internal/sdk/models/components/phonenumber.go:
+    last_write_checksum: sha1:37a38c6030393c79d06e38d09823482739eebdd5
+  internal/sdk/models/components/phonenumbercapabilities.go:
+    last_write_checksum: sha1:32764f31e6e058f6e5530431b3716b569e0ec014
+  internal/sdk/models/components/phonenumberlist.go:
+    last_write_checksum: sha1:1094dcfd20b5575777f3bf0fc06046c168ed37e5
+  internal/sdk/models/components/phonenumberstatus.go:
+    last_write_checksum: sha1:10498a3aa4375aba01e29c0d207d176a3599a59e
+  internal/sdk/models/components/pipeline.go:
+    last_write_checksum: sha1:3da4c697854a693b2f7adb859d809983cb8a8409
+  internal/sdk/models/components/pipelinecondition.go:
+    last_write_checksum: sha1:6e2f58377b52f47cb600cb8c31e6da873fb2006c
+  internal/sdk/models/components/pipelinelist.go:
+    last_write_checksum: sha1:d38c9afa2f4d25553c54830a9ed0067be3f01021
+  internal/sdk/models/components/platformtype.go:
+    last_write_checksum: sha1:e62a23329a10fed70c2cca8a02d73ef0b08c4340
+  internal/sdk/models/components/rangefilter.go:
+    last_write_checksum: sha1:6e0a98ed7a002c2fbb023f116ef04cff204dda0b
+  internal/sdk/models/components/scheduledmessage.go:
+    last_write_checksum: sha1:198ab2aee7c55c7a77a319a4a7f0710495504ca9
+  internal/sdk/models/components/scheduledmessagelist.go:
+    last_write_checksum: sha1:c6c737e136aa13591ab06df388721951223b8df8
+  internal/sdk/models/components/security.go:
+    last_write_checksum: sha1:308f9bdf3a80fea366c3ed2ac14e3516ad04fda6
+  internal/sdk/models/components/stage.go:
+    last_write_checksum: sha1:bf732431eacaa106f25ad6df4929b005d975246a
+  internal/sdk/models/components/stagelist.go:
+    last_write_checksum: sha1:2b0b7bd64a68dcbfff6546dcd88bd6acf01e8eba
+  internal/sdk/models/components/stageparams.go:
+    last_write_checksum: sha1:eeecd4e8c54a7af444275bcafbea949be49a0045
+  internal/sdk/models/components/stageupdateparams.go:
+    last_write_checksum: sha1:61749239eea55d237d24f3c27327b57301cf675b
+  internal/sdk/models/components/tag.go:
+    last_write_checksum: sha1:7d26267bcbe7aa9684ec863a16fb9b83dde7c859
+  internal/sdk/models/components/webhookendpoint.go:
+    last_write_checksum: sha1:cc7338607a26baf36468dc0954f80e976d9e0aea
+  internal/sdk/models/components/webhookendpointlist.go:
+    last_write_checksum: sha1:a6f12a6885880e77c56f7a2f201b56d48e87fc2a
+  internal/sdk/models/operations/cancelscheduledmessage.go:
+    last_write_checksum: sha1:e29b68e34812e307f243b7c10ff5555cc497d07f
+  internal/sdk/models/operations/createagent.go:
+    last_write_checksum: sha1:af76c93c43d01428c9dbfb1860aeb96c725ef1cb
+  internal/sdk/models/operations/createbroadcast.go:
+    last_write_checksum: sha1:fcb416369a9e92112661390d0cfddf3b5d34a359
+  internal/sdk/models/operations/createcard.go:
+    last_write_checksum: sha1:dbe52c92be7141663bdf119ba985e4a94071ec34
+  internal/sdk/models/operations/createchat.go:
+    last_write_checksum: sha1:b041f4162225c6f6ce1c3521248411942f01094c
+  internal/sdk/models/operations/createcontact.go:
+    last_write_checksum: sha1:6704c658d49b856264545676549c6a137693d897
+  internal/sdk/models/operations/createcustomfield.go:
+    last_write_checksum: sha1:3c79cd31839f1eab77e6564a481fc1877bcf8241
+  internal/sdk/models/operations/createmedia.go:
+    last_write_checksum: sha1:1ef49a0a051ddff9819bd33523b7a9e7ee8787d3
+  internal/sdk/models/operations/createmessagetemplate.go:
+    last_write_checksum: sha1:36ae2cac7c516295138bf5861b4f6c8c66e679bc
+  internal/sdk/models/operations/createpipeline.go:
+    last_write_checksum: sha1:2ac3e8e51fa71a5081f96f3c4a4a9fdbaca5f9bb
+  internal/sdk/models/operations/createstage.go:
+    last_write_checksum: sha1:e9d61ed3c6589ce37193753772e94de9160ba07f
+  internal/sdk/models/operations/createtag.go:
+    last_write_checksum: sha1:710b3d2b3a00b05d461465d03195016f77b2e1c3
+  internal/sdk/models/operations/createwebhookendpoint.go:
+    last_write_checksum: sha1:52fbfceab927a818031631e305b54f1ceb6c2efc
+  internal/sdk/models/operations/deleteagent.go:
+    last_write_checksum: sha1:9725bd32265c0b214c3c43f06ed610c3d649e4e0
+  internal/sdk/models/operations/deletecard.go:
+    last_write_checksum: sha1:faec527a8f986a679a7ad951556e676cd88cee53
+  internal/sdk/models/operations/deletecontact.go:
+    last_write_checksum: sha1:5810d76fd4bc4e71cd70bd6c1cdef20b5cc2ac43
+  internal/sdk/models/operations/deletecustomfield.go:
+    last_write_checksum: sha1:fa87a3f565ad4e067bd3afaf05b6027aa52a77b1
+  internal/sdk/models/operations/deletememory.go:
+    last_write_checksum: sha1:3d1ac1f13d7473d21bd1db037c2d827ce0f33808
+  internal/sdk/models/operations/deletemessage.go:
+    last_write_checksum: sha1:762ab6fd5755a28e93294eb5004cde958f24e4be
+  internal/sdk/models/operations/deletemessagetemplate.go:
+    last_write_checksum: sha1:e9785bb89115b0ace5632b26b1cea64f67a4e546
+  internal/sdk/models/operations/deletepipeline.go:
+    last_write_checksum: sha1:fa8835c9599d62aa1dc690b31bf3a498e14a4b14
+  internal/sdk/models/operations/deletestage.go:
+    last_write_checksum: sha1:e4c0515f2336969e1496763f273c804ba39a487f
+  internal/sdk/models/operations/deletetag.go:
+    last_write_checksum: sha1:d1ab528098c47e241748008927f81a246eb5564b
+  internal/sdk/models/operations/deletewebhookendpoint.go:
+    last_write_checksum: sha1:3d2618f59f0e5a002b7bb66c04e8db0c9b5c3ab8
+  internal/sdk/models/operations/getaccount.go:
+    last_write_checksum: sha1:4b3748577b60820e18b67924ee4245ada1b11e88
+  internal/sdk/models/operations/getagent.go:
+    last_write_checksum: sha1:215f5df79252f8e1b65f6e49fa49b762b376105d
+  internal/sdk/models/operations/getbroadcast.go:
+    last_write_checksum: sha1:a15a6f3f152fbeb0a735a9de6e48c1dd1e4f3ea6
+  internal/sdk/models/operations/getcampaignrisk.go:
+    last_write_checksum: sha1:d4f35342040f97f842ed5625591d98294338ef01
+  internal/sdk/models/operations/getchat.go:
+    last_write_checksum: sha1:0b4dfd6c89f991f9907b902aa4395cd3ec673e5a
+  internal/sdk/models/operations/getcontact.go:
+    last_write_checksum: sha1:2c89b3dd301844b1e6ec25bb82d5022928d6a7b1
+  internal/sdk/models/operations/getcosts.go:
+    last_write_checksum: sha1:150a78d243bb38f76fef8431f010759a427168f2
+  internal/sdk/models/operations/getmedia.go:
+    last_write_checksum: sha1:622e0603805e2ebe4b3d6a268182ea6f5f8ea027
+  internal/sdk/models/operations/getmessage.go:
+    last_write_checksum: sha1:af9d740258f302889f6e423a5698983fba391ec9
+  internal/sdk/models/operations/getmessagetemplate.go:
+    last_write_checksum: sha1:337e3997f4280b4eed66e725b2ed9f5ab7d6ab5d
+  internal/sdk/models/operations/getphonenumber.go:
+    last_write_checksum: sha1:f39301a28cceff73116340d35f6ee360605f43df
+  internal/sdk/models/operations/getpipeline.go:
+    last_write_checksum: sha1:ca81ad15f802119b58e2aa8b4ed6f58a920494ab
+  internal/sdk/models/operations/getwebhookendpoint.go:
+    last_write_checksum: sha1:70f2c6de7048f35860e2f468843c4984647b0166
+  internal/sdk/models/operations/importcontacts.go:
+    last_write_checksum: sha1:0db6c5a04f8a88101c3a4da115d15b9f853773cc
+  internal/sdk/models/operations/listagents.go:
+    last_write_checksum: sha1:1910ab6cf802fbf12f18556368b9ce4e8689d9ff
+  internal/sdk/models/operations/listbroadcastrecipients.go:
+    last_write_checksum: sha1:bb9817feef16379f3b4e556372c13b26498bd8ee
+  internal/sdk/models/operations/listbroadcasts.go:
+    last_write_checksum: sha1:f918445d92353da587d267b1a122d3138c612d94
+  internal/sdk/models/operations/listcards.go:
+    last_write_checksum: sha1:48471fb848a78f7fa0d88f5857092a06da5ae1a6
+  internal/sdk/models/operations/listchats.go:
+    last_write_checksum: sha1:31fe7acdb47923e3af6552d009f32552994c9798
+  internal/sdk/models/operations/listcontacts.go:
+    last_write_checksum: sha1:1574d94a37273563e16e2d9a4430b8fc2ec5ec40
+  internal/sdk/models/operations/listcustomfields.go:
+    last_write_checksum: sha1:304ec9a2b59bc4e4204a92e63148b7bcd77c9de9
+  internal/sdk/models/operations/listmemories.go:
+    last_write_checksum: sha1:fd9e9d39e97b343a3fd6085d9f3a6acbf43cfa37
+  internal/sdk/models/operations/listmessages.go:
+    last_write_checksum: sha1:ea11594e98dee386b897d12a9192276e705904c0
+  internal/sdk/models/operations/listmessagetemplates.go:
+    last_write_checksum: sha1:b7c8e613e0ae8d9ab28d988c273012cb3408e368
+  internal/sdk/models/operations/listphonenumbers.go:
+    last_write_checksum: sha1:7774187afa6ce4f7e648a514741539e13e887515
+  internal/sdk/models/operations/listpipelines.go:
+    last_write_checksum: sha1:524ed5ddbd74b6ea943799b0dd9a8905a149f1f7
+  internal/sdk/models/operations/listscheduledmessages.go:
+    last_write_checksum: sha1:36ece59045d93df9dddc71c36bffb6fde02cf262
+  internal/sdk/models/operations/listwebhookendpoints.go:
+    last_write_checksum: sha1:50d15e499c07ebd2cf403a514f127d7418b0ce18
+  internal/sdk/models/operations/options.go:
+    last_write_checksum: sha1:a3ba7bdd88183a3d27fedb8c12daf6c73eed7c89
+  internal/sdk/models/operations/reordercustomfields.go:
+    last_write_checksum: sha1:c8cfe7668bd59385ff1f376c4cce95b9d09aa8fa
+  internal/sdk/models/operations/reorderstages.go:
+    last_write_checksum: sha1:6ba86b6e017e2346fb0faddcc7c0c72c94821e1c
+  internal/sdk/models/operations/sendmessage.go:
+    last_write_checksum: sha1:262775fc011ddd7d2729de38a4bb9692fd590378
+  internal/sdk/models/operations/simulateagent.go:
+    last_write_checksum: sha1:f3b36839abf5731c7e08534c850830d779272ef5
+  internal/sdk/models/operations/suggestagentinstructions.go:
+    last_write_checksum: sha1:2d6b77fc6bd9410bd816fa2459ec2bd940dc593d
+  internal/sdk/models/operations/syncmessagetemplates.go:
+    last_write_checksum: sha1:f7a80706ee06c4c2bce2dec21f5a9a94cb96d5eb
+  internal/sdk/models/operations/updateagent.go:
+    last_write_checksum: sha1:fcf1a013c0dfe0e2127b9776f010520c93a3a3a5
+  internal/sdk/models/operations/updatebroadcast.go:
+    last_write_checksum: sha1:2a69bbba16a92e2cddc6cd456f83e843d123ce4f
+  internal/sdk/models/operations/updatecard.go:
+    last_write_checksum: sha1:7ba79c427660c86dbd0215a77e7d3b0e9ab4538c
+  internal/sdk/models/operations/updatechat.go:
+    last_write_checksum: sha1:c95ecaf67e0486bf5c68b3bb331525f3d90f0af0
+  internal/sdk/models/operations/updatecontact.go:
+    last_write_checksum: sha1:46ad3f1963cf701b577d6df3df0889cbd3ccac4a
+  internal/sdk/models/operations/updatecustomfield.go:
+    last_write_checksum: sha1:56128c8190f527182f5b834a1ee8f31acf1fc84c
+  internal/sdk/models/operations/updatephonenumber.go:
+    last_write_checksum: sha1:f5cc3a70cc652d25c9062d717659e68eafd1e1fa
+  internal/sdk/models/operations/updatepipeline.go:
+    last_write_checksum: sha1:15fa6deae068331306806b238ab53cedf134f772
+  internal/sdk/models/operations/updatestage.go:
+    last_write_checksum: sha1:dbe4b2cbd4cf4bd16e94502d14de561b52d86054
+  internal/sdk/models/operations/updatetag.go:
+    last_write_checksum: sha1:0ea62ed6bcf19de10762e52af0c86bbbd4ab6e55
+  internal/sdk/models/operations/updatewebhookendpoint.go:
+    last_write_checksum: sha1:5e057e54a4eb3433a8ecc1ecd2cef963828c6152
+  internal/sdk/models/sdkerrors/errorresponse.go:
+    last_write_checksum: sha1:13ad354cfaead801a84b54c583771f62596bc32c
+  internal/sdk/models/sdkerrors/responsevalidationerror.go:
+    last_write_checksum: sha1:83d2ff47a383e0acb395a59a0cd86c8f2cb8b72b
+  internal/sdk/models/sdkerrors/sdkdefaulterror.go:
+    last_write_checksum: sha1:3b982146b182b911043ee0abccf67a0c9f2c938a
+  internal/sdk/models/webhooks/receiveevent.go:
+    last_write_checksum: sha1:8266bb7634bd31388168acb5594da29b95c953ad
+  internal/sdk/numeros.go:
+    last_write_checksum: sha1:0641c34a656361b485e4b7a04ec2687365961491
+  internal/sdk/optionalnullable/optionalnullable.go:
+    last_write_checksum: sha1:f97bf4c7e1c7837940d3629ebd0773790c87bece
+  internal/sdk/optionalnullable/optionalnullable_test.go:
+    last_write_checksum: sha1:72c8a9bbd963ab3d63620ad8d903ee9975a80141
+  internal/sdk/retry/config.go:
+    last_write_checksum: sha1:aa88743b91e54fe7cbfe0f68c5e63623bb2b7283
+  internal/sdk/sdkinternal/config/sdkconfiguration.go:
+    last_write_checksum: sha1:fd87e368fd17eced98c2a2398fc1c8b85ea5d907
+  internal/sdk/sdkinternal/hooks/hooks.go:
+    last_write_checksum: sha1:ff19f0034b53b0af15c22c9f5e92b23a23cfc89c
+  internal/sdk/sdkinternal/utils/contenttype.go:
+    last_write_checksum: sha1:32a3a3c9ef59cc2b94ecfd6a886030cea674fd33
+  internal/sdk/sdkinternal/utils/env.go:
+    last_write_checksum: sha1:1acd3707439f51e1663edd99599ec1a20b596f13
+  internal/sdk/sdkinternal/utils/form.go:
+    last_write_checksum: sha1:87107f5d5809f9dd1ad631d29594eab5d95a57a5
+  internal/sdk/sdkinternal/utils/headers.go:
+    last_write_checksum: sha1:22952ab7897ac9a4fa49628e16330cbfc9dca6b7
+  internal/sdk/sdkinternal/utils/json.go:
+    last_write_checksum: sha1:3ffd51f27f950cfe3ebc1060582f32a5ac2936e7
+  internal/sdk/sdkinternal/utils/pathparams.go:
+    last_write_checksum: sha1:ffb8e7111744328fd4b4e56eefa6dd0b09e873ee
+  internal/sdk/sdkinternal/utils/queryparams.go:
+    last_write_checksum: sha1:542140c04c70984ec464dbfd5f66eaf2b89690df
+  internal/sdk/sdkinternal/utils/requestbody.go:
+    last_write_checksum: sha1:b1c62a445a280ea3075a10f5c640fed7ee0d8419
+  internal/sdk/sdkinternal/utils/retries.go:
+    last_write_checksum: sha1:e6385318959f44685183e35015beb1fbbc77d436
+  internal/sdk/sdkinternal/utils/security.go:
+    last_write_checksum: sha1:ae62e8b8830b1de1f1496e70c05a28be19fd97f2
+  internal/sdk/sdkinternal/utils/union.go:
+    last_write_checksum: sha1:bd36d6a2748033f48bf83d5555325e0830058851
+  internal/sdk/sdkinternal/utils/union_test.go:
+    last_write_checksum: sha1:c1b94259c67424bd095135143b5d17f6bfe9ad21
+  internal/sdk/sdkinternal/utils/utils.go:
+    last_write_checksum: sha1:f1445e6f9bc6d9f77ae3b0e4653eaab8a7740320
+  internal/sdk/types/bigint.go:
+    last_write_checksum: sha1:8f2571d39e8ad2d9f7e980b3dfd69244dcdcfc7a
+  internal/sdk/types/date.go:
+    last_write_checksum: sha1:37ad5189d42d33ad6b118da229f62b3d67dc2323
+  internal/sdk/types/datetime.go:
+    last_write_checksum: sha1:186a846a30dbf5f46140a72c3e4dbfcfbb4d901c
+  internal/sdk/types/pointers.go:
+    last_write_checksum: sha1:707051587d3f9b43aa58d3ed0077bcac838148b5
+  internal/testclient/testclient.go:
+    last_write_checksum: sha1:00f623e11359a38b7fee9ce4015c1ba937939791
+  internal/usage/bodyschemas.go:
+    last_write_checksum: sha1:9cc1e07d71b697b1d188c219d2b3be8b0f398dc4
+  internal/usage/schema.go:
+    last_write_checksum: sha1:500cee574b52d53788fb266c619c4375a814ed95
+  scripts/install.ps1:
+    last_write_checksum: sha1:933e8642c5084e96105c136d675bd7dae6b13506
+  scripts/install.sh:
+    last_write_checksum: sha1:660a9ea6e59c1b2bb4d30bba1bad68b4540529e0
+examples:
+  getAccount:
+    speakeasy-default-get-account:
+      responses:
+        "200":
+          application/json: {"id": "acct_1Nv0", "object": "account", "name": "<value>", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listPhoneNumbers:
+    speakeasy-default-list-phone-numbers:
+      parameters:
+        query:
+          limit: 10
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getPhoneNumber:
+    speakeasy-default-get-phone-number:
+      parameters:
+        path:
+          phone_number: "699-894-6593 x302"
+      responses:
+        "200":
+          application/json: {"id": "pn_8f3aK1", "object": "phone_number", "name": "<value>", "display_phone_number": "+55 11 99999-8888", "wa_id": "5511999998888", "verified_name": "<value>", "platform_type": "coexistence", "status": "connecting", "quality_rating": "GREEN", "messaging_limit": "TIER_2K", "can_send": "AVAILABLE", "health_issues": ["<value 1>", "<value 2>", "<value 3>"], "alerts": {"key": {"severity": "<value>", "description": "dimly yahoo afterwards straw inasmuch scrabble minister gurn worth"}}, "capabilities": {"freeform_messaging": true, "templates": true, "groups": false}, "agent": "<value>", "flow": "<value>", "operators": ["<value 1>"], "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updatePhoneNumber:
+    speakeasy-default-update-phone-number:
+      parameters:
+        path:
+          phone_number: "746-251-5332 x4780"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "pn_8f3aK1", "object": "phone_number", "name": "<value>", "display_phone_number": "+55 11 99999-8888", "wa_id": "5511999998888", "verified_name": "<value>", "platform_type": "coexistence", "status": "connecting", "quality_rating": "GREEN", "messaging_limit": "TIER_2K", "can_send": "AVAILABLE", "health_issues": ["<value 1>", "<value 2>", "<value 3>"], "alerts": {}, "capabilities": {"freeform_messaging": false, "templates": false, "groups": false}, "agent": "<value>", "flow": "<value>", "operators": ["<value 1>", "<value 2>", "<value 3>"], "created": 1760190012}
+        "409":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getCampaignRisk:
+    speakeasy-default-get-campaign-risk:
+      parameters:
+        path:
+          phone_number: "267-932-1758 x1398"
+        query:
+          recipients: 0
+      responses:
+        "200":
+          application/json: {"object": "campaign_risk", "phone_number": "562-244-8379", "probability": 0.42, "level": "high", "recipients": 508727, "safe_recipients": 131439, "factors": []}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createChat:
+    speakeasy-default-create-chat:
+      parameters:
+        path:
+          phone_number: "274-295-3396 x5995"
+      requestBody:
+        application/json: {"phone": "+5511988887777"}
+      responses:
+        "200":
+          application/json: {"id": "chat_Q8x2", "object": "chat", "phone_number": "408-203-4421 x133", "wa_id": "5511988887777", "type": "individual", "name": "<value>", "contact": "<value>", "last_message_at": null, "last_read_at": 241914, "ai_paused": false, "service_window_expires_at": 844459, "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listChats:
+    speakeasy-default-list-chats:
+      parameters:
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "chat_Q8x2", "object": "chat", "phone_number": "(509) 257-5544 x0070", "wa_id": "5511988887777", "type": "group", "name": null, "contact": "<value>", "last_message_at": 757031, "last_read_at": 36169, "ai_paused": false, "service_window_expires_at": 53162, "created": 1760190012}], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getChat:
+    speakeasy-default-get-chat:
+      parameters:
+        path:
+          chat: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "chat_Q8x2", "object": "chat", "phone_number": "529.502.2992", "wa_id": "5511988887777", "type": "group", "name": "<value>", "contact": "<value>", "last_message_at": 32702, "last_read_at": 47453, "ai_paused": true, "service_window_expires_at": 983796, "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateChat:
+    speakeasy-default-update-chat:
+      parameters:
+        path:
+          chat: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "chat_Q8x2", "object": "chat", "phone_number": "234.966.0278 x59895", "wa_id": "5511988887777", "type": "individual", "name": "<value>", "contact": "<value>", "last_message_at": 765415, "last_read_at": null, "ai_paused": false, "service_window_expires_at": 102181, "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listMemories:
+    speakeasy-default-list-memories:
+      parameters:
+        path:
+          chat: "<value>"
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteMemory:
+    speakeasy-default-delete-memory:
+      parameters:
+        path:
+          chat: "<value>"
+          memory: "c873c82b-4b69-41e3-9fc4-a53fa1720f1e"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listScheduledMessages:
+    speakeasy-default-list-scheduled-messages:
+      parameters:
+        path:
+          chat: "<value>"
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "c2ee3f0b-2d6f-4a09-9dfd-c7b879863f8b", "object": "scheduled_message", "chat": "<value>", "type": "scheduled", "context": "<value>", "scheduled_for": 1760190012, "created": 1760190012}], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  cancelScheduledMessage:
+    speakeasy-default-cancel-scheduled-message:
+      parameters:
+        path:
+          chat: "<value>"
+          scheduled_message: "d69fdde2-715c-41a5-acb9-7bfceb2c3d4f"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listMessages:
+    speakeasy-default-list-messages:
+      parameters:
+        path:
+          chat: "<value>"
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  sendMessage:
+    text:
+      parameters:
+        path:
+          chat: "<value>"
+      requestBody:
+        application/json: {"type": "text", "text": {"body": "Oi! Seu pedido saiu para entrega.", "preview_url": false}}
+      responses:
+        "201":
+          application/json: {"type": "audio", "audio": {}, "id": "msg_3EB0C431C26A1916E2", "object": "message", "chat": "<value>", "direction": "outbound", "status": "received", "errors": [{"code": "<value>", "message": "<value>"}], "context": {"message_id": "<id>"}, "from": {"wa_id": "5511988887777", "name": "<value>"}, "mentions": ["<value 1>", "<value 2>", "<value 3>"], "broadcast": "<value>", "pricing": {"billable": true, "category": "marketing"}, "whatsapp_message_id": "<id>", "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+    reply:
+      parameters:
+        path:
+          chat: "<value>"
+      requestBody:
+        application/json: {"type": "image", "image": {"link": "https://example.com/comprovante.jpg", "caption": "Segue o comprovante.", "view_once": false}, "context": {"message_id": "msg_3EB0C431C26A1916E2"}}
+      responses:
+        "201":
+          application/json: {"type": "contacts", "contacts": [{"name": {"formatted_name": "<value>"}, "phones": []}], "id": "msg_3EB0C431C26A1916E2", "object": "message", "chat": "<value>", "direction": "inbound", "status": "received", "errors": [], "context": null, "from": null, "mentions": ["<value 1>", "<value 2>"], "broadcast": "<value>", "pricing": {"billable": true, "category": "marketing"}, "whatsapp_message_id": "<id>", "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+    template:
+      parameters:
+        path:
+          chat: "<value>"
+      requestBody:
+        application/json: {"type": "template", "template": {"id": "tmpl_4Ld8", "parameters": {"name": "Ana"}}}
+      responses:
+        "201":
+          application/json: {"type": "location", "location": {"latitude": 5416.96, "longitude": 6522.86}, "id": "msg_3EB0C431C26A1916E2", "object": "message", "chat": "<value>", "direction": "outbound", "status": "received", "errors": [], "context": {"message_id": "<id>"}, "from": {"wa_id": "5511988887777", "name": "<value>"}, "mentions": ["<value 1>"], "broadcast": "<value>", "pricing": {"billable": true, "category": "marketing"}, "whatsapp_message_id": "<id>", "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+    speakeasy-default-send-message:
+      parameters:
+        path:
+          chat: "<value>"
+      requestBody:
+        application/json: {"type": "document", "document": {}}
+      responses:
+        "201":
+          application/json: {"type": "text", "text": {"body": "<value>"}, "id": "msg_3EB0C431C26A1916E2", "object": "message", "chat": "<value>", "direction": "inbound", "status": "received", "errors": [{"code": "<value>", "message": "<value>"}], "context": {"message_id": "<id>"}, "from": null, "mentions": ["<value 1>", "<value 2>", "<value 3>"], "broadcast": "<value>", "pricing": {"billable": true, "category": "marketing"}, "whatsapp_message_id": "<id>", "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getMessage:
+    speakeasy-default-get-message:
+      parameters:
+        path:
+          chat: "<value>"
+          message: "<value>"
+      responses:
+        "200":
+          application/json: {"type": "contacts", "contacts": [], "id": "msg_3EB0C431C26A1916E2", "object": "message", "chat": "<value>", "direction": "inbound", "status": "accepted", "errors": [], "context": {"message_id": "<id>"}, "from": {"wa_id": "5511988887777", "name": "<value>"}, "mentions": ["<value 1>", "<value 2>"], "broadcast": null, "pricing": {"billable": false, "category": "service"}, "whatsapp_message_id": "<id>", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteMessage:
+    speakeasy-default-delete-message:
+      parameters:
+        path:
+          chat: "<value>"
+          message: "<value>"
+      responses:
+        "422":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createMedia:
+    speakeasy-default-create-media:
+      requestBody:
+        multipart/form-data: {"file": "x-file: example.file"}
+      responses:
+        "201":
+          application/json: {"id": "media_3JdK2", "object": "media", "mime_type": "image/jpeg", "size": 331958, "filename": "example.file", "sha256": "<value>", "url": "https://torn-fedora.net", "url_expires_at": 1760190012, "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getMedia:
+    speakeasy-default-get-media:
+      parameters:
+        path:
+          media: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "media_3JdK2", "object": "media", "mime_type": "image/jpeg", "size": 368765, "filename": "example.file", "sha256": "<value>", "url": "https://infatuated-disposer.org/", "url_expires_at": 1760190012, "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listContacts:
+    speakeasy-default-list-contacts:
+      parameters:
+        query:
+          limit: 20
+          offset: 0
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": false, "url": "/v1/chats", "total": 447162}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createContact:
+    speakeasy-default-create-contact:
+      requestBody:
+        application/json: {"phone": "+5511988887777", "custom_fields": {"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11": "Plano anual"}}
+      responses:
+        "201":
+          application/json: {"id": "cont_0b6f9a52-6a1e-4c1f-9d55-2f0b7e4c8a11", "object": "contact", "wa_id": "5511988887777", "name": "<value>", "notes": "<value>", "custom_fields": {}, "phone_numbers": ["<value 1>", "<value 2>", "<value 3>"], "opted_out": true, "opted_out_at": 598764, "sources": [], "last_campaign_at": 14335, "updated": 1760190012, "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getContact:
+    speakeasy-default-get-contact:
+      parameters:
+        path:
+          contact: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "cont_0b6f9a52-6a1e-4c1f-9d55-2f0b7e4c8a11", "object": "contact", "wa_id": "5511988887777", "name": "<value>", "notes": "<value>", "custom_fields": {}, "phone_numbers": ["<value 1>", "<value 2>"], "opted_out": false, "opted_out_at": 874296, "sources": ["phone"], "last_campaign_at": 774049, "updated": 1760190012, "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateContact:
+    speakeasy-default-update-contact:
+      parameters:
+        path:
+          contact: "<value>"
+      requestBody:
+        application/json: {"custom_fields": {"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11": "Plano anual"}}
+      responses:
+        "200":
+          application/json: {"id": "cont_0b6f9a52-6a1e-4c1f-9d55-2f0b7e4c8a11", "object": "contact", "wa_id": "5511988887777", "name": "<value>", "notes": "<value>", "custom_fields": {"key": "<value>"}, "phone_numbers": ["<value 1>", "<value 2>"], "opted_out": true, "opted_out_at": 796708, "sources": [], "last_campaign_at": 341698, "updated": 1760190012, "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteContact:
+    speakeasy-default-delete-contact:
+      parameters:
+        path:
+          contact: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  importContacts:
+    speakeasy-default-import-contacts:
+      parameters:
+        path:
+          phone_number: "(755) 253-1500 x668"
+      requestBody:
+        application/json: {"rows": [], "create": true}
+      responses:
+        "201":
+          application/json: {"object": "contact_import", "phone_number": "1-349-658-2128 x5934", "created": 960203, "updated": 560700, "skipped": 578002, "errors": []}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listCustomFields:
+    speakeasy-default-list-custom-fields:
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "<id>", "object": "custom_field", "label": "<value>", "type": "select", "options": [], "position": 443677}], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createCustomField:
+    speakeasy-default-create-custom-field:
+      requestBody:
+        application/json: {"label": "<value>", "type": "text"}
+      responses:
+        "201":
+          application/json: {"id": "<id>", "object": "custom_field", "label": "<value>", "type": "date", "options": [], "position": 227056}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  reorderCustomFields:
+    speakeasy-default-reorder-custom-fields:
+      requestBody:
+        application/json: {"ids": []}
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "<id>", "object": "custom_field", "label": "<value>", "type": "date", "options": ["<value 1>"], "position": 559145}], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateCustomField:
+    speakeasy-default-update-custom-field:
+      parameters:
+        path:
+          custom_field: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "custom_field", "label": "<value>", "type": "select", "options": ["<value 1>", "<value 2>", "<value 3>"], "position": 939391}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteCustomField:
+    speakeasy-default-delete-custom-field:
+      parameters:
+        path:
+          custom_field: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listPipelines:
+    speakeasy-default-list-pipelines:
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "<id>", "object": "pipeline", "name": "<value>", "phone_numbers": ["<value 1>", "<value 2>"], "conditions": [{"field": "source", "op": "lt"}], "stages": [{"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": null, "position": 856439}], "tags": [], "created": 1760190012}], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createPipeline:
+    speakeasy-default-create-pipeline:
+      requestBody:
+        application/json: {"name": "<value>", "stages": [{"name": "<value>", "color": "#2563eb"}], "conditions": [{"field": "source", "op": "in"}]}
+      responses:
+        "201":
+          application/json: {"id": "<id>", "object": "pipeline", "name": "<value>", "phone_numbers": ["<value 1>", "<value 2>"], "conditions": [], "stages": [{"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": "gold", "position": 122001}], "tags": [{"id": "<id>", "object": "tag", "pipeline": "<value>", "name": "<value>", "color": "tan", "position": 985171}], "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getPipeline:
+    speakeasy-default-get-pipeline:
+      parameters:
+        path:
+          pipeline: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "pipeline", "name": "<value>", "phone_numbers": ["<value 1>", "<value 2>"], "conditions": [], "stages": [{"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": null, "position": 534668}], "tags": [], "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updatePipeline:
+    speakeasy-default-update-pipeline:
+      parameters:
+        path:
+          pipeline: "<value>"
+      requestBody:
+        application/json: {"conditions": [{"field": "source", "op": "set"}]}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "pipeline", "name": "<value>", "phone_numbers": [], "conditions": [{"field": "source", "op": "set"}], "stages": [{"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": "tan", "position": 222266}], "tags": [{"id": "<id>", "object": "tag", "pipeline": "<value>", "name": "<value>", "color": "orchid", "position": 404766}], "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deletePipeline:
+    speakeasy-default-delete-pipeline:
+      parameters:
+        path:
+          pipeline: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createStage:
+    speakeasy-default-create-stage:
+      parameters:
+        path:
+          pipeline: "<value>"
+      requestBody:
+        application/json: {"name": "<value>", "color": "#2563eb"}
+      responses:
+        "201":
+          application/json: {"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": "azure", "position": 804661}
+        4XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  reorderStages:
+    speakeasy-default-reorder-stages:
+      parameters:
+        path:
+          pipeline: "<value>"
+      requestBody:
+        application/json: {"ids": []}
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateStage:
+    speakeasy-default-update-stage:
+      parameters:
+        path:
+          stage: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "stage", "pipeline": "<value>", "name": "<value>", "color": "magenta", "position": 672437}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteStage:
+    speakeasy-default-delete-stage:
+      parameters:
+        path:
+          stage: "<value>"
+      responses:
+        "409":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createTag:
+    speakeasy-default-create-tag:
+      parameters:
+        path:
+          pipeline: "<value>"
+      requestBody:
+        application/json: {"name": "<value>", "color": "#2563eb"}
+      responses:
+        "201":
+          application/json: {"id": "<id>", "object": "tag", "pipeline": "<value>", "name": "<value>", "color": "white", "position": 692641}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateTag:
+    speakeasy-default-update-tag:
+      parameters:
+        path:
+          tag: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "tag", "pipeline": "<value>", "name": "<value>", "color": "orange", "position": 49309}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteTag:
+    speakeasy-default-delete-tag:
+      parameters:
+        path:
+          tag: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listCards:
+    speakeasy-default-list-cards:
+      parameters:
+        path:
+          pipeline: "<value>"
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "<id>", "object": "card", "pipeline": "<value>", "stage": "<value>", "tag": "<value>", "position": 501.65, "contact": "<value>", "chat": "<value>", "updated": 1760190012}], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createCard:
+    speakeasy-default-create-card:
+      parameters:
+        path:
+          pipeline: "<value>"
+      requestBody:
+        application/json: {"contact": "<value>", "stage": "<value>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "card", "pipeline": "<value>", "stage": "<value>", "tag": "<value>", "position": 861.64, "contact": "<value>", "chat": null, "updated": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateCard:
+    speakeasy-default-update-card:
+      parameters:
+        path:
+          card: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "object": "card", "pipeline": "<value>", "stage": "<value>", "tag": "<value>", "position": 1093.09, "contact": "<value>", "chat": null, "updated": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteCard:
+    speakeasy-default-delete-card:
+      parameters:
+        path:
+          card: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listAgents:
+    speakeasy-default-list-agents:
+      parameters:
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "agent_12Rf", "object": "agent", "name": "<value>", "instructions": "<value>", "faq": [{"question": "<value>", "answer": "<value>"}], "pause_duration_seconds": 55110, "reply_delay_seconds": 2199.38, "follow_up": {"enabled": false, "delay_minutes": 30}, "schedule_message": {"enabled": false}, "files": [], "media": [], "phone_numbers": ["<value 1>", "<value 2>"], "created": 181607}], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createAgent:
+    speakeasy-default-create-agent:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "201":
+          application/json: {"id": "agent_12Rf", "object": "agent", "name": "<value>", "instructions": "<value>", "faq": [], "pause_duration_seconds": 30744, "reply_delay_seconds": 2506.13, "follow_up": {"enabled": true, "delay_minutes": 30}, "schedule_message": {"enabled": false}, "files": [], "media": [], "phone_numbers": ["<value 1>", "<value 2>"], "created": 670315}
+        "409":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getAgent:
+    speakeasy-default-get-agent:
+      parameters:
+        path:
+          agent: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "agent_12Rf", "object": "agent", "name": "<value>", "instructions": "<value>", "faq": [{"question": "<value>", "answer": "<value>"}], "pause_duration_seconds": 832471, "reply_delay_seconds": 309.26, "follow_up": {"enabled": true, "delay_minutes": 30}, "schedule_message": {"enabled": true}, "files": [{"name": "<value>", "content": "<value>"}], "media": [{"url": "https://reasonable-innovation.com", "type": "image", "description": "louse how save key sure-footed into motor hence"}], "phone_numbers": ["<value 1>", "<value 2>", "<value 3>"], "created": 503402}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateAgent:
+    speakeasy-default-update-agent:
+      parameters:
+        path:
+          agent: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "agent_12Rf", "object": "agent", "name": "<value>", "instructions": "<value>", "faq": [], "pause_duration_seconds": 709167, "reply_delay_seconds": 8501.98, "follow_up": {"enabled": false, "delay_minutes": 30}, "schedule_message": {"enabled": false}, "files": [{"name": "<value>", "content": "<value>"}], "media": [{"url": "https://short-term-case.info", "type": "video", "description": "ha so polyester submissive regulate coolly zowie for galvanize likewise"}], "phone_numbers": ["<value 1>", "<value 2>"], "created": 142829}
+        "403":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteAgent:
+    speakeasy-default-delete-agent:
+      parameters:
+        path:
+          agent: "<value>"
+      responses:
+        "403":
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  simulateAgent:
+    speakeasy-default-simulate-agent:
+      parameters:
+        path:
+          agent: "<value>"
+      requestBody:
+        application/json: {"messages": [{"role": "agent", "content": "<value>"}]}
+      responses:
+        "200":
+          application/json: {"object": "agent_simulation", "agent": "<value>", "tier": "enterprise", "reply": "<value>", "actions": []}
+        "429":
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  suggestAgentInstructions:
+    speakeasy-default-suggest-agent-instructions:
+      parameters:
+        path:
+          agent: "<value>"
+      responses:
+        "200":
+          application/json: {"object": "agent_instruction_suggestions", "agent": "<value>", "topics": [{"title": "<value>", "body": "<value>", "reason": "<value>"}], "conversations": 24124}
+        "429":
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listMessageTemplates:
+    speakeasy-default-list-message-templates:
+      parameters:
+        path:
+          phone_number: "785.541.1151 x612"
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createMessageTemplate:
+    speakeasy-default-create-message-template:
+      parameters:
+        path:
+          phone_number: "686.211.2376 x8546"
+      requestBody:
+        application/json: {"name": "<value>", "category": "utility", "language": "pt_BR", "body": "Oi {{name}}, sua consulta é amanhã às 14h."}
+      responses:
+        "201":
+          application/json: {"id": "tmpl_4Ld8", "object": "message_template", "phone_number": null, "waba_id": "<id>", "name": "<value>", "meta_name": "<value>", "language": "pt_BR", "category": "utility", "status": "disabled", "quality": "<value>", "rejected_reason": "<value>", "unsupported": "<value>", "header": "<value>", "body": "<value>", "footer": "<value>", "media": "<value>", "buttons": [], "parameters": ["name"], "parameter_format": "positional", "created": 1760190012}
+        "409":
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  syncMessageTemplates:
+    speakeasy-default-sync-message-templates:
+      parameters:
+        path:
+          phone_number: "743-733-6764 x696"
+      responses:
+        "200":
+          application/json: {"object": "message_template_sync", "phone_number": "(850) 628-1107 x55260", "synced": true, "imported": 252786, "updated": 913155, "deleted": 328972}
+        "422":
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getMessageTemplate:
+    speakeasy-default-get-message-template:
+      parameters:
+        path:
+          message_template: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "tmpl_4Ld8", "object": "message_template", "phone_number": "1-815-698-5633 x2810", "waba_id": "<id>", "name": "<value>", "meta_name": "<value>", "language": "pt_BR", "category": "marketing", "status": "approved", "quality": "<value>", "rejected_reason": "<value>", "unsupported": "<value>", "header": null, "body": "<value>", "footer": "<value>", "media": null, "buttons": [{"text": "<value>", "url": "https://hoarse-seagull.biz/", "phone_number": "246.999.9375"}], "parameters": ["name"], "parameter_format": "positional", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "permission_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteMessageTemplate:
+    speakeasy-default-delete-message-template:
+      parameters:
+        path:
+          message_template: "<value>"
+      responses:
+        "409":
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "api_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listBroadcasts:
+    speakeasy-default-list-broadcasts:
+      parameters:
+        query:
+          limit: 20
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "bcast_9c2M", "object": "broadcast", "phone_number": "1-210-408-0086", "transport": "official", "status": "canceled", "template": "<value>", "text": "<value>", "consent_confirmed": true, "stats": {"total": 491606, "sent": 26628, "delivered": 743097, "read": 611842, "failed": 668949, "not_sent": 29283, "skipped": 206002}, "failure_reasons": {"key": 464470}, "failure_reason": "<value>", "created": 1760190012}], "has_more": false, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createBroadcast:
+    speakeasy-default-create-broadcast:
+      parameters:
+        path:
+          phone_number: "(583) 659-7986"
+      requestBody:
+        application/json: {"template": "<value>", "recipients": [{"contact": "<value>"}]}
+      responses:
+        "201":
+          application/json: {"id": "bcast_9c2M", "object": "broadcast", "phone_number": "(720) 318-4074 x753", "transport": "official", "status": "sending", "template": "<value>", "text": "<value>", "consent_confirmed": false, "stats": {"total": 366465, "sent": 935411, "delivered": 146429, "read": 810673, "failed": 390934, "not_sent": 601855, "skipped": 659259}, "failure_reasons": {"key": 853837, "key1": 84185}, "failure_reason": "<value>", "created": 1760190012}
+        "422":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getBroadcast:
+    speakeasy-default-get-broadcast:
+      parameters:
+        path:
+          broadcast: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "bcast_9c2M", "object": "broadcast", "phone_number": "(358) 261-9565 x623", "transport": "session", "status": "canceled", "template": "<value>", "text": "<value>", "consent_confirmed": false, "stats": {"total": 613554, "sent": 906306, "delivered": 107360, "read": 694487, "failed": 169701, "not_sent": 945189, "skipped": 612368}, "failure_reasons": {"key": 926086, "key1": 464733, "key2": 522647}, "failure_reason": "<value>", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateBroadcast:
+    start:
+      parameters:
+        path:
+          broadcast: "<value>"
+      requestBody:
+        application/json: {"status": "sending", "consent_confirmed": true}
+      responses:
+        "200":
+          application/json: {"id": "bcast_9c2M", "object": "broadcast", "phone_number": "(300) 609-0370 x9508", "transport": "session", "status": "canceled", "template": "<value>", "text": "<value>", "consent_confirmed": true, "stats": {"total": 572778, "sent": 221299, "delivered": 233668, "read": 712025, "failed": 718506, "not_sent": 173765, "skipped": 229758}, "failure_reasons": {}, "failure_reason": "<value>", "created": 1760190012}
+        "400":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+    cancel:
+      parameters:
+        path:
+          broadcast: "<value>"
+      requestBody:
+        application/json: {"status": "canceled"}
+      responses:
+        "200":
+          application/json: {"id": "bcast_9c2M", "object": "broadcast", "phone_number": "(300) 609-0370 x9508", "transport": "session", "status": "canceled", "template": "<value>", "text": "<value>", "consent_confirmed": true, "stats": {"total": 572778, "sent": 221299, "delivered": 233668, "read": 712025, "failed": 718506, "not_sent": 173765, "skipped": 229758}, "failure_reasons": {}, "failure_reason": "<value>", "created": 1760190012}
+        "400":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+    speakeasy-default-update-broadcast:
+      parameters:
+        path:
+          broadcast: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "bcast_9c2M", "object": "broadcast", "phone_number": "(300) 609-0370 x9508", "transport": "session", "status": "canceled", "template": "<value>", "text": "<value>", "consent_confirmed": true, "stats": {"total": 572778, "sent": 221299, "delivered": 233668, "read": 712025, "failed": 718506, "not_sent": 173765, "skipped": 229758}, "failure_reasons": {}, "failure_reason": "<value>", "created": 1760190012}
+        "400":
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listBroadcastRecipients:
+    speakeasy-default-list-broadcast-recipients:
+      parameters:
+        path:
+          broadcast: "<value>"
+        query:
+          limit: 50
+          offset: 0
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"object": "broadcast_recipient", "wa_id": "5511988887777", "variables": {"key": "<value>", "key1": "<value>"}, "status": "unknown", "error_code": 176144, "error_message": "<value>", "whatsapp_message_id": "<id>", "updated": 783281}], "has_more": true, "url": "/v1/chats", "total": 196254}
+        4XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getCosts:
+    speakeasy-default-get-costs:
+      parameters:
+        query:
+          start: 624757
+          end: 189930
+      responses:
+        "200":
+          application/json: {"object": "costs", "start": 1760190012, "end": 1760190012, "accounts": [], "unavailable": 750662}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  listWebhookEndpoints:
+    speakeasy-default-list-webhook-endpoints:
+      parameters:
+        path:
+          phone_number: "901-223-8921 x93117"
+        query:
+          limit: 10
+      responses:
+        "200":
+          application/json: {"object": "list", "data": [{"id": "we_3f9c0d2a1b4e5f6a7b8c9d0e", "object": "webhook_endpoint", "phone_number": "428-840-1269 x01407", "url": "https://taut-airman.name/", "enabled_events": ["<value>"], "status": "disabled", "description": "between gadzooks e-mail merit", "secret": "whsec_7f2b…", "api_version": "<value>", "created": 1760190012}], "has_more": true, "url": "/v1/chats"}
+        4XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "invalid_request_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  createWebhookEndpoint:
+    speakeasy-default-create-webhook-endpoint:
+      parameters:
+        path:
+          phone_number: "(689) 403-6409"
+      requestBody:
+        application/json: {"url": "https://example.com/blu/webhooks", "enabled_events": []}
+      responses:
+        "201":
+          application/json: {"id": "we_3f9c0d2a1b4e5f6a7b8c9d0e", "object": "webhook_endpoint", "phone_number": "333-960-8503 x460", "url": "https://portly-fledgling.biz", "enabled_events": ["message.updated"], "status": "disabled", "description": "behind save stitcher", "secret": "whsec_7f2b…", "api_version": "<value>", "created": 1760190012}
+        "400":
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "whatsapp_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  getWebhookEndpoint:
+    speakeasy-default-get-webhook-endpoint:
+      parameters:
+        path:
+          webhook_endpoint: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "we_3f9c0d2a1b4e5f6a7b8c9d0e", "object": "webhook_endpoint", "phone_number": "897-230-7459 x708", "url": "https://specific-secrecy.com/", "enabled_events": [], "status": "enabled", "description": "upbeat sternly shadowbox", "secret": "whsec_7f2b…", "api_version": "<value>", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  updateWebhookEndpoint:
+    speakeasy-default-update-webhook-endpoint:
+      parameters:
+        path:
+          webhook_endpoint: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"id": "we_3f9c0d2a1b4e5f6a7b8c9d0e", "object": "webhook_endpoint", "phone_number": "(863) 648-5031 x29211", "url": "https://steep-scenario.com", "enabled_events": [], "status": "enabled", "description": "ick even resource even puff madly yellow until", "secret": "whsec_7f2b…", "api_version": "<value>", "created": 1760190012}
+        4XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "rate_limit_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+  deleteWebhookEndpoint:
+    speakeasy-default-delete-webhook-endpoint:
+      parameters:
+        path:
+          webhook_endpoint: "<value>"
+      responses:
+        4XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+        5XX:
+          application/json: {"error": {"type": "authentication_error", "code": "outside_service_window", "message": "<value>", "param": "text.body", "request_id": "<id>"}}
+examplesVersion: 1.0.2
+cliShorthands:
+  cancelScheduledMessage:
+    json:
+      flags:
+        chat: c
+        scheduled-message: s
+  createAgent:
+    json:
+      flags:
+        instructions: i
+        media: m
+        name: "n"
+        pause-duration-seconds: p
+        reply-delay-seconds: r
+        schedule-message: s
+  createBroadcast:
+    json:
+      flags:
+        phone-number: p
+        recipients: r
+        template: t
+  createCard:
+    json:
+      flags:
+        contact: c
+        pipeline: p
+        stage: s
+  createChat:
+    json:
+      flags:
+        phone-number: p
+  createContact:
+    json:
+      flags:
+        custom-fields: c
+  createCustomField:
+    json:
+      flags:
+        label: l
+        type: t
+  createMedia:
+    multipart:
+      flags:
+        file: f
+  createMessageTemplate:
+    json:
+      flags:
+        category: c
+        footer: f
+        language: l
+        name: "n"
+        phone-number: p
+  createPipeline:
+    json:
+      flags:
+        conditions: c
+        name: "n"
+        phone-numbers: p
+        stages: s
+  createStage:
+    json:
+      flags:
+        color-param: c
+        name: "n"
+        pipeline: p
+  createTag:
+    json:
+      flags:
+        color-param: c
+        name: "n"
+        pipeline: p
+  createWebhookEndpoint:
+    json:
+      flags:
+        enabled-events: e
+        phone-number: p
+        url: u
+  deleteAgent:
+    json:
+      flags:
+        agent: a
+  deleteCard:
+    json:
+      flags:
+        card: c
+  deleteContact:
+    json:
+      flags:
+        contact: c
+  deleteCustomField:
+    json:
+      flags:
+        custom-field: c
+  deleteMemory:
+    json:
+      flags:
+        chat: c
+        memory: m
+  deleteMessage:
+    json:
+      flags:
+        chat: c
+        message: m
+  deleteMessageTemplate:
+    json:
+      flags:
+        message-template: m
+  deletePipeline:
+    json:
+      flags:
+        pipeline: p
+  deleteStage:
+    json:
+      flags:
+        stage: s
+  deleteTag:
+    json:
+      flags:
+        tag: t
+  deleteWebhookEndpoint:
+    json:
+      flags:
+        webhook-endpoint: w
+  getAgent:
+    json:
+      flags:
+        agent: a
+  getBroadcast:
+    json:
+      flags:
+        broadcast: b
+  getCampaignRisk:
+    json:
+      flags:
+        phone-number: p
+        recipients: r
+  getChat:
+    json:
+      flags:
+        chat: c
+  getContact:
+    json:
+      flags:
+        contact: c
+  getCosts:
+    json:
+      flags:
+        end: e
+        phone-number: p
+        start: s
+  getMedia:
+    json:
+      flags:
+        media: m
+  getMessage:
+    json:
+      flags:
+        chat: c
+        message: m
+  getMessageTemplate:
+    json:
+      flags:
+        message-template: m
+  getPhoneNumber:
+    json:
+      flags:
+        phone-number: p
+  getPipeline:
+    json:
+      flags:
+        pipeline: p
+  getWebhookEndpoint:
+    json:
+      flags:
+        webhook-endpoint: w
+  importContacts:
+    json:
+      flags:
+        create: c
+        phone-number: p
+        rows: r
+  listAgents:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        starting-after: s
+  listBroadcastRecipients:
+    json:
+      flags:
+        broadcast: b
+        limit: l
+        status: s
+  listBroadcasts:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        phone-number: p
+        transport: t
+  listCards:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        pipeline: p
+  listChats:
+    json:
+      flags:
+        ending-before: e
+        phone-number: p
+        unread: u
+        wa-id: w
+  listContacts:
+    json:
+      flags:
+        limit: l
+        wa-id: w
+  listMemories:
+    json:
+      flags:
+        chat: c
+  listMessageTemplates:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        phone-number: p
+  listMessages:
+    json:
+      flags:
+        chat: c
+        ending-before: e
+        limit: l
+        starting-after: s
+  listPhoneNumbers:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        platform-type: p
+  listScheduledMessages:
+    json:
+      flags:
+        chat: c
+  listWebhookEndpoints:
+    json:
+      flags:
+        ending-before: e
+        limit: l
+        phone-number: p
+        starting-after: s
+  reorderCustomFields:
+    json:
+      flags:
+        ids: i
+  reorderStages:
+    json:
+      flags:
+        ids: i
+        pipeline: p
+  sendMessage:
+    json:
+      flags:
+        body-param: b
+        chat: c
+  simulateAgent:
+    json:
+      flags:
+        agent: a
+        instructions: i
+        pause-duration-seconds: p
+        reply-delay-seconds: r
+        schedule-message: s
+  suggestAgentInstructions:
+    json:
+      flags:
+        agent: a
+  syncMessageTemplates:
+    json:
+      flags:
+        phone-number: p
+  updateAgent:
+    json:
+      flags:
+        agent: a
+        instructions: i
+        media: m
+        name: "n"
+        pause-duration-seconds: p
+        reply-delay-seconds: r
+        schedule-message: s
+  updateBroadcast:
+    json:
+      flags:
+        broadcast: b
+        consent-confirmed: c
+        recipients: r
+        status: s
+        template: t
+  updateCard:
+    json:
+      flags:
+        card: c
+        position: p
+        stage: s
+        tag: t
+  updateChat:
+    json:
+      flags:
+        ai-paused: a
+        chat: c
+        last-read-at: l
+  updateContact:
+    json:
+      flags:
+        contact: c
+  updateCustomField:
+    json:
+      flags:
+        custom-field: c
+        label: l
+  updatePhoneNumber:
+    json:
+      flags:
+        agent: a
+        flow: f
+        name: "n"
+        phone-number: p
+  updatePipeline:
+    json:
+      flags:
+        conditions: c
+        name: "n"
+        pipeline: p
+  updateStage:
+    json:
+      flags:
+        color-param: c
+        name: "n"
+        stage: s
+  updateTag:
+    json:
+      flags:
+        color-param: c
+        name: "n"
+        tag: t
+  updateWebhookEndpoint:
+    json:
+      flags:
+        enabled-events: e
+        status: s
+        url: u
+        webhook-endpoint: w
