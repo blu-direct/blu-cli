@@ -40,9 +40,7 @@ type Chat struct {
 	WaID string   `json:"wa_id"`
 	Type ChatType `json:"type"`
 	// O nome do contato, o nome de perfil no WhatsApp ou o assunto do grupo.
-	Name *string `json:"name"`
-	// Reservado para o contato deste `wa_id`. Hoje, sempre nulo.
-	Contact       *string `json:"contact"`
+	Name          *string `json:"name"`
 	LastMessageAt *int64  `json:"last_message_at"`
 	// Até quando a equipe leu a conversa.
 	LastReadAt *int64 `json:"last_read_at"`
@@ -105,13 +103,6 @@ func (c *Chat) GetName() *string {
 		return nil
 	}
 	return c.Name
-}
-
-func (c *Chat) GetContact() *string {
-	if c == nil {
-		return nil
-	}
-	return c.Contact
 }
 
 func (c *Chat) GetLastMessageAt() *int64 {

@@ -12,8 +12,8 @@ import (
 func InitConversasRoot(parent *cobra.Command) error {
 	var ConversasCmd = &cobra.Command{
 		Use:         "conversas",
-		Short:       "Conversas entre um dos seus números e um `wa_id`, com o que o agente de IA guarda e agenda em cada uma",
-		Long:        "Conversas entre um dos seus números e um `wa_id`, com o que o agente de IA guarda e agenda em cada uma.",
+		Short:       "Conversas entre um dos seus números e um `wa_id`",
+		Long:        "Conversas entre um dos seus números e um `wa_id`.",
 		Args:        cobra.NoArgs,
 		Annotations: map[string]string{"speakeasy_cli_group": "true"},
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -37,22 +37,6 @@ func InitConversasRoot(parent *cobra.Command) error {
 	}
 
 	if err := initUpdateChatCmd(ConversasCmd); err != nil {
-		return err
-	}
-
-	if err := initListMemoriesCmd(ConversasCmd); err != nil {
-		return err
-	}
-
-	if err := initDeleteMemoryCmd(ConversasCmd); err != nil {
-		return err
-	}
-
-	if err := initListScheduledMessagesCmd(ConversasCmd); err != nil {
-		return err
-	}
-
-	if err := initCancelScheduledMessageCmd(ConversasCmd); err != nil {
 		return err
 	}
 

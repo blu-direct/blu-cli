@@ -4,20 +4,11 @@
 
 package components
 
-// EventType - - `message.received`: chegou uma mensagem. `data.object` é a mensagem.
-//
-// Também podem ser assinados, mas ainda não são enviados:
-// `message.updated`, `phone_number.connected`,
-// `phone_number.disconnected`, `broadcast.completed` e `broadcast.failed`.
+// EventType - `message.received`: chegou uma mensagem. `data.object` é a mensagem.
 type EventType string
 
 const (
-	EventTypeMessageReceived         EventType = "message.received"
-	EventTypeMessageUpdated          EventType = "message.updated"
-	EventTypePhoneNumberConnected    EventType = "phone_number.connected"
-	EventTypePhoneNumberDisconnected EventType = "phone_number.disconnected"
-	EventTypeBroadcastCompleted      EventType = "broadcast.completed"
-	EventTypeBroadcastFailed         EventType = "broadcast.failed"
+	EventTypeMessageReceived EventType = "message.received"
 )
 
 func (e EventType) ToPointer() *EventType {
@@ -28,7 +19,7 @@ func (e EventType) ToPointer() *EventType {
 func (e *EventType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "message.received", "message.updated", "phone_number.connected", "phone_number.disconnected", "broadcast.completed", "broadcast.failed":
+		case "message.received":
 			return true
 		}
 	}

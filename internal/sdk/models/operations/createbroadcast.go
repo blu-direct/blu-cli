@@ -13,7 +13,7 @@ type CreateBroadcastRequestBody struct {
 	// Um modelo aprovado da conta do WhatsApp Business do número.
 	Template string `json:"template"`
 	// Os destinatários. Um número não pode se repetir.
-	Recipients []components.BroadcastRecipientsParamsUnion `json:"recipients"`
+	Recipients []components.BroadcastRecipientsParams `json:"recipients"`
 }
 
 func (c *CreateBroadcastRequestBody) GetTemplate() string {
@@ -23,9 +23,9 @@ func (c *CreateBroadcastRequestBody) GetTemplate() string {
 	return c.Template
 }
 
-func (c *CreateBroadcastRequestBody) GetRecipients() []components.BroadcastRecipientsParamsUnion {
+func (c *CreateBroadcastRequestBody) GetRecipients() []components.BroadcastRecipientsParams {
 	if c == nil {
-		return []components.BroadcastRecipientsParamsUnion{}
+		return []components.BroadcastRecipientsParams{}
 	}
 	return c.Recipients
 }

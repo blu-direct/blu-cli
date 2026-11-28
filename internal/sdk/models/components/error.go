@@ -35,17 +35,17 @@ type Error struct {
 	// Um texto curto que identifica o erro específico, quando houver.
 	//
 	// - `invalid_request_error`: `parameter_missing`, `parameter_invalid`,
-	//   `resource_missing`, `resource_limit_exceeded`, `plan_limit_reached`,
-	//   `agent_limit_reached`, `template_name_exists`, `template_disabled`,
+	//   `resource_missing`, `resource_limit_exceeded`,
+	//   `template_name_exists`, `template_disabled`,
 	//   `broadcast_not_draft`, `consent_required`.
 	// - `whatsapp_error`: `phone_number_disconnected`, `not_on_whatsapp`,
 	//   `outside_service_window`, `unsupported_for_platform_type`,
 	//   `recipient_opted_out`, `template_not_approved`,
-	//   `template_unsupported`, `message_too_old`, `media_too_large`,
+	//   `template_unsupported`, `media_too_large`,
 	//   `broadcast_rejected`, `whatsapp_rejected`.
 	// - `permission_error`: `insufficient_scope`, `phone_number_not_allowed`,
 	//   `subscription_inactive`.
-	// - `rate_limit_error`: `rate_limit_exceeded`, `ai_limit_reached`.
+	// - `rate_limit_error`: `rate_limit_exceeded`.
 	//
 	Code *string `json:"code,omitzero"`
 	// Uma mensagem legível para pessoas.

@@ -8,20 +8,20 @@ import (
 	"github.com/blu-direct/blu-cli/internal/sdk/sdkinternal/utils"
 )
 
-type MessageTemplateCategory string
+type Category string
 
 const (
-	MessageTemplateCategoryMarketing      MessageTemplateCategory = "marketing"
-	MessageTemplateCategoryUtility        MessageTemplateCategory = "utility"
-	MessageTemplateCategoryAuthentication MessageTemplateCategory = "authentication"
+	CategoryMarketing      Category = "marketing"
+	CategoryUtility        Category = "utility"
+	CategoryAuthentication Category = "authentication"
 )
 
-func (e MessageTemplateCategory) ToPointer() *MessageTemplateCategory {
+func (e Category) ToPointer() *Category {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *MessageTemplateCategory) IsExact() bool {
+func (e *Category) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "marketing", "utility", "authentication":
@@ -117,9 +117,9 @@ type MessageTemplate struct {
 	WabaID *string `json:"waba_id"`
 	Name   string  `json:"name"`
 	// O nome do modelo na Meta.
-	MetaName *string                  `json:"meta_name"`
-	Language *string                  `json:"language"`
-	Category *MessageTemplateCategory `json:"category"`
+	MetaName *string   `json:"meta_name"`
+	Language *string   `json:"language"`
+	Category *Category `json:"category"`
 	// O status da análise da Meta. Só modelos `approved` podem ser enviados.
 	Status *MessageTemplateStatus `json:"status"`
 	// A classificação de qualidade da Meta, como `GREEN`, `YELLOW` ou `RED`.
@@ -200,7 +200,7 @@ func (m *MessageTemplate) GetLanguage() *string {
 	return m.Language
 }
 
-func (m *MessageTemplate) GetCategory() *MessageTemplateCategory {
+func (m *MessageTemplate) GetCategory() *Category {
 	if m == nil {
 		return nil
 	}

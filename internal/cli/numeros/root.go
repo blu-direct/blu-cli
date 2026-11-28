@@ -32,14 +32,6 @@ func InitNumerosRoot(parent *cobra.Command) error {
 		return err
 	}
 
-	if err := initUpdatePhoneNumberCmd(NumerosCmd); err != nil {
-		return err
-	}
-
-	if err := initGetCampaignRiskCmd(NumerosCmd); err != nil {
-		return err
-	}
-
 	parent.AddCommand(NumerosCmd)
 	return nil
 }

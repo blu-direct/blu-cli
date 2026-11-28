@@ -9,14 +9,10 @@ import (
 	"fmt"
 	"github.com/blu-direct/blu-cli/internal/cli/agentes"
 	"github.com/blu-direct/blu-cli/internal/cli/campanhas"
-	"github.com/blu-direct/blu-cli/internal/cli/campospersonalizados"
-	"github.com/blu-direct/blu-cli/internal/cli/cards"
 	"github.com/blu-direct/blu-cli/internal/cli/conta"
-	"github.com/blu-direct/blu-cli/internal/cli/contatos"
 	"github.com/blu-direct/blu-cli/internal/cli/conversas"
 	"github.com/blu-direct/blu-cli/internal/cli/custos"
 	"github.com/blu-direct/blu-cli/internal/cli/endpointsdewebhook"
-	"github.com/blu-direct/blu-cli/internal/cli/funis"
 	"github.com/blu-direct/blu-cli/internal/cli/mensagens"
 	"github.com/blu-direct/blu-cli/internal/cli/midia"
 	"github.com/blu-direct/blu-cli/internal/cli/modelosdemensagem"
@@ -45,8 +41,8 @@ func NewRootCommand() (*cobra.Command, error) {
 	cobra.AddTemplateFunc("groupedGlobalFlagUsages", groupedGlobalFlagUsages)
 	rootCmd := &cobra.Command{
 		Use:           "blu",
-		Short:         "API do blü: Envie e receba mensagens no WhatsApp, gerencie contatos, funis, agentes de IA e campanhas.",
-		Long:          "A API do blü segue o modelo REST. Ela usa URLs previsíveis e orientadas a\nrecursos, recebe corpos de requisição em JSON, devolve respostas em JSON e\nusa códigos de status, autenticação e métodos HTTP padrão.\n\n## Vocabulário\n\nA API usa os mesmos termos do WhatsApp. Um **número** é um número de\nWhatsApp conectado à sua conta. Uma **conversa** liga um dos seus números a\num `wa_id` e reúne as **mensagens** trocadas entre eles. Um **contato** é\numa pessoa do CRM, única na conta mesmo quando conversa com vários dos seus\nnúmeros. Uma **campanha** envia um modelo de mensagem aprovado para vários\ndestinatários.\n\n## Tipos de plataforma\n\nUm número usa a API do WhatsApp Cloud, da Meta (`cloud_api`), o WhatsApp\nconectado por QR code (`qr`) ou os dois ao mesmo tempo (`coexistence`). O\ncampo `capabilities` do número informa o que ele permite, e a API devolve\num `whatsapp_error` com um `code` específico quando a requisição não segue\numa regra.\n\n## Permissões\n\nCada chave de API tem permissões, e cada endpoint informa a que exige:\n\n| Permissão | Permite |\n| --- | --- |\n| `phone_numbers:read` | Consultar os números e o risco de campanha deles. |\n| `phone_numbers:write` | Renomear os números e escolher o agente, o fluxo e os atendentes de cada um. |\n| `inbox:read` | Consultar conversas, mensagens, mídias, memórias e mensagens agendadas. |\n| `inbox:write` | Abrir e atualizar conversas, enviar e apagar mensagens, enviar mídias. |\n| `crm:read` | Consultar contatos, campos personalizados, funis e cards. |\n| `crm:write` | Criar, alterar e excluir contatos, campos personalizados, funis e cards. |\n| `agents:read` | Consultar agentes, simular respostas e gerar sugestões de instruções. |\n| `agents:write` | Criar, alterar e excluir agentes. |\n| `campaigns:read` | Consultar modelos de mensagem, campanhas e custos. |\n| `campaigns:write` | Criar e excluir modelos e preparar campanhas. |\n| `campaigns:send` | Iniciar campanhas, junto com `campaigns:write`. |\n| `webhooks:manage` | Gerenciar os endpoints de webhook. |\n\nUma chave também pode ser restrita a alguns números. Os outros números, e o\nque pertence a eles, não são encontrados (`404`).\n\n## Convenções\n\n- **Ids** são opacos e começam com um prefixo do tipo de objeto, como `pn_`, `chat_` ou `msg_`.\n- Todo objeto tem `object`, com o tipo dele. Os objetos guardados também têm\n  `id`, e as datas são em segundos Unix.\n- **Números**: o que pertence a um número fica sob ele, como\n  `POST /v1/phone_numbers/{phone_number}/chats`. As listas gerais, como\n  `GET /v1/chats`, aceitam `phone_number` para filtrar por número.\n- `POST` numa coleção cria e devolve `201`; `PATCH` num objeto atualiza os\n  campos enviados; `PUT` numa ordem a substitui; `DELETE` exclui e devolve\n  `204`, sem corpo.\n- **Listas** devolvem um objeto de lista com `has_more`. A maioria é\n  paginada por cursor, com `limit`, `starting_after` e `ending_before`. As\n  de contatos e de destinatários de campanha são paginadas com `limit` e\n  `offset` e também devolvem `total`.\n- **Limite de requisições**: as respostas trazem `X-RateLimit-Limit`,\n  `X-RateLimit-Remaining` e `X-RateLimit-Reset`. Acima do limite, a resposta\n  é `429 rate_limit_exceeded`, com `Retry-After` em segundos.",
+		Short:         "API do blü: Envie e receba mensagens no WhatsApp, gerencie agentes de IA, campanhas e webhooks.",
+		Long:          "A API do blü segue o modelo REST. Ela usa URLs previsíveis e orientadas a\nrecursos, recebe corpos de requisição em JSON, devolve respostas em JSON e\nusa códigos de status, autenticação e métodos HTTP padrão.\n\n## Vocabulário\n\nA API usa os mesmos termos do WhatsApp. Um **número** é um número de\nWhatsApp conectado à sua conta. Uma **conversa** liga um dos seus números a\num `wa_id` e reúne as **mensagens** trocadas entre eles. Uma **campanha**\nenvia um modelo de mensagem aprovado para vários destinatários.\n\n## Tipos de plataforma\n\nUm número usa a API do WhatsApp Cloud, da Meta (`cloud_api`), o WhatsApp\nconectado por QR code (`qr`) ou os dois ao mesmo tempo (`coexistence`). O\ncampo `capabilities` do número informa o que ele permite, e a API devolve\num `whatsapp_error` com um `code` específico quando a requisição não segue\numa regra.\n\n## Permissões\n\nCada chave de API tem permissões, e cada endpoint informa a que exige:\n\n| Permissão | Permite |\n| --- | --- |\n| `phone_numbers:read` | Consultar os números de WhatsApp conectados. |\n| `inbox:read` | Consultar conversas, mensagens e mídias. |\n| `inbox:write` | Abrir e atualizar conversas, enviar mensagens e enviar mídias. |\n| `agents:read` | Consultar agentes de IA. |\n| `agents:write` | Alterar agentes de IA. |\n| `campaigns:read` | Consultar modelos de mensagem, campanhas e custos. |\n| `campaigns:write` | Criar e excluir modelos e preparar campanhas. |\n| `campaigns:send` | Iniciar campanhas, junto com `campaigns:write`. |\n| `webhooks:manage` | Gerenciar os endpoints de webhook. |\n\nUma chave também pode ser restrita a alguns números. Os outros números, e o\nque pertence a eles, não são encontrados (`404`).\n\n## Convenções\n\n- **Ids** são opacos e começam com um prefixo do tipo de objeto, como `pn_`, `chat_` ou `msg_`.\n- Todo objeto tem `object`, com o tipo dele. Os objetos guardados também têm\n  `id`, e as datas são em segundos Unix.\n- **Números**: o que pertence a um número fica sob ele, como\n  `POST /v1/phone_numbers/{phone_number}/chats`. As listas gerais, como\n  `GET /v1/chats`, aceitam `phone_number` para filtrar por número.\n- `POST` numa coleção cria e devolve `201`; `PATCH` num objeto atualiza os\n  campos enviados; `DELETE` exclui e devolve `204`, sem corpo.\n- **Listas** devolvem um objeto de lista com `has_more`. A maioria é\n  paginada por cursor, com `limit`, `starting_after` e `ending_before`. A\n  de destinatários de campanha é paginada com `limit` e `offset` e também\n  devolve `total`.\n- **Limite de requisições**: as respostas trazem `X-RateLimit-Limit`,\n  `X-RateLimit-Remaining` e `X-RateLimit-Reset`. Acima do limite, a resposta\n  é `429 rate_limit_exceeded`, com `Retry-After` em segundos.",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -102,18 +98,6 @@ func NewRootCommand() (*cobra.Command, error) {
 	}
 	if err := midia.InitMidiaRoot(rootCmd); err != nil {
 		return nil, fmt.Errorf("init midia: %w", err)
-	}
-	if err := contatos.InitContatosRoot(rootCmd); err != nil {
-		return nil, fmt.Errorf("init contatos: %w", err)
-	}
-	if err := campospersonalizados.InitCamposPersonalizadosRoot(rootCmd); err != nil {
-		return nil, fmt.Errorf("init campos-personalizados: %w", err)
-	}
-	if err := funis.InitFunisRoot(rootCmd); err != nil {
-		return nil, fmt.Errorf("init funis: %w", err)
-	}
-	if err := cards.InitCardsRoot(rootCmd); err != nil {
-		return nil, fmt.Errorf("init cards: %w", err)
 	}
 	if err := agentes.InitAgentesRoot(rootCmd); err != nil {
 		return nil, fmt.Errorf("init agentes: %w", err)

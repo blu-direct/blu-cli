@@ -49,7 +49,7 @@ func Float64(f float64) *float64 { return &f }
 // Pointer provides a helper function to return a pointer to a type
 func Pointer[T any](v T) *T { return &v }
 
-// Blu - API do blü: Envie e receba mensagens no WhatsApp, gerencie contatos, funis, agentes de IA e campanhas.
+// Blu - API do blü: Envie e receba mensagens no WhatsApp, gerencie agentes de IA, campanhas e webhooks.
 // A API do blü segue o modelo REST. Ela usa URLs previsíveis e orientadas a
 // recursos, recebe corpos de requisição em JSON, devolve respostas em JSON e
 // usa códigos de status, autenticação e métodos HTTP padrão.
@@ -58,10 +58,8 @@ func Pointer[T any](v T) *T { return &v }
 //
 // A API usa os mesmos termos do WhatsApp. Um **número** é um número de
 // WhatsApp conectado à sua conta. Uma **conversa** liga um dos seus números a
-// um `wa_id` e reúne as **mensagens** trocadas entre eles. Um **contato** é
-// uma pessoa do CRM, única na conta mesmo quando conversa com vários dos seus
-// números. Uma **campanha** envia um modelo de mensagem aprovado para vários
-// destinatários.
+// um `wa_id` e reúne as **mensagens** trocadas entre eles. Uma **campanha**
+// envia um modelo de mensagem aprovado para vários destinatários.
 //
 // ## Tipos de plataforma
 //
@@ -77,14 +75,11 @@ func Pointer[T any](v T) *T { return &v }
 //
 // | Permissão | Permite |
 // | --- | --- |
-// | `phone_numbers:read` | Consultar os números e o risco de campanha deles. |
-// | `phone_numbers:write` | Renomear os números e escolher o agente, o fluxo e os atendentes de cada um. |
-// | `inbox:read` | Consultar conversas, mensagens, mídias, memórias e mensagens agendadas. |
-// | `inbox:write` | Abrir e atualizar conversas, enviar e apagar mensagens, enviar mídias. |
-// | `crm:read` | Consultar contatos, campos personalizados, funis e cards. |
-// | `crm:write` | Criar, alterar e excluir contatos, campos personalizados, funis e cards. |
-// | `agents:read` | Consultar agentes, simular respostas e gerar sugestões de instruções. |
-// | `agents:write` | Criar, alterar e excluir agentes. |
+// | `phone_numbers:read` | Consultar os números de WhatsApp conectados. |
+// | `inbox:read` | Consultar conversas, mensagens e mídias. |
+// | `inbox:write` | Abrir e atualizar conversas, enviar mensagens e enviar mídias. |
+// | `agents:read` | Consultar agentes de IA. |
+// | `agents:write` | Alterar agentes de IA. |
 // | `campaigns:read` | Consultar modelos de mensagem, campanhas e custos. |
 // | `campaigns:write` | Criar e excluir modelos e preparar campanhas. |
 // | `campaigns:send` | Iniciar campanhas, junto com `campaigns:write`. |
@@ -102,12 +97,11 @@ func Pointer[T any](v T) *T { return &v }
 //     `POST /v1/phone_numbers/{phone_number}/chats`. As listas gerais, como
 //     `GET /v1/chats`, aceitam `phone_number` para filtrar por número.
 //   - `POST` numa coleção cria e devolve `201`; `PATCH` num objeto atualiza os
-//     campos enviados; `PUT` numa ordem a substitui; `DELETE` exclui e devolve
-//     `204`, sem corpo.
+//     campos enviados; `DELETE` exclui e devolve `204`, sem corpo.
 //   - **Listas** devolvem um objeto de lista com `has_more`. A maioria é
-//     paginada por cursor, com `limit`, `starting_after` e `ending_before`. As
-//     de contatos e de destinatários de campanha são paginadas com `limit` e
-//     `offset` e também devolvem `total`.
+//     paginada por cursor, com `limit`, `starting_after` e `ending_before`. A
+//     de destinatários de campanha é paginada com `limit` e `offset` e também
+//     devolve `total`.
 //   - **Limite de requisições**: as respostas trazem `X-RateLimit-Limit`,
 //     `X-RateLimit-Remaining` e `X-RateLimit-Reset`. Acima do limite, a resposta
 //     é `429 rate_limit_exceeded`, com `Retry-After` em segundos.
@@ -117,20 +111,12 @@ type Blu struct {
 	Conta *Conta
 	// Números de WhatsApp conectados à sua conta.
 	Numeros *Numeros
-	// Conversas entre um dos seus números e um `wa_id`, com o que o agente de IA guarda e agenda em cada uma.
+	// Conversas entre um dos seus números e um `wa_id`.
 	Conversas *Conversas
 	// Mensagens enviadas e recebidas em uma conversa.
 	Mensagens *Mensagens
 	// Arquivos usados em mensagens.
 	Midia *Midia
-	// As pessoas do CRM, únicas na conta.
-	Contatos *Contatos
-	// Campos que você define para guardar dados dos contatos.
-	CamposPersonalizados *CamposPersonalizados
-	// Funis do CRM, com suas etapas e etiquetas.
-	Funis *Funis
-	// Contatos em um funil, cada um em uma etapa.
-	Cards *Cards
 	// Agentes de IA que respondem às conversas.
 	Agentes *Agentes
 	// Mensagens aprovadas pela Meta, da conta do WhatsApp Business de um número `cloud_api` ou `coexistence`.
@@ -242,10 +228,6 @@ func New(opts ...SDKOption) *Blu {
 	sdk.Conversas = newConversas(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Mensagens = newMensagens(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Midia = newMidia(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.Contatos = newContatos(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.CamposPersonalizados = newCamposPersonalizados(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.Funis = newFunis(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.Cards = newCards(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Agentes = newAgentes(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ModelosDeMensagem = newModelosDeMensagem(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Campanhas = newCampanhas(sdk, sdk.sdkConfiguration, sdk.hooks)

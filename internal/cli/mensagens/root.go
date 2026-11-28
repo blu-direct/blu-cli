@@ -36,10 +36,6 @@ func InitMensagensRoot(parent *cobra.Command) error {
 		return err
 	}
 
-	if err := initDeleteMessageCmd(MensagensCmd); err != nil {
-		return err
-	}
-
 	parent.AddCommand(MensagensCmd)
 	return nil
 }

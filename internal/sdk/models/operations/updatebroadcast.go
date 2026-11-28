@@ -42,8 +42,8 @@ type UpdateBroadcastRequestBody struct {
 	// Um modelo aprovado da conta do WhatsApp Business do número.
 	Template *string `json:"template,omitzero"`
 	// Os destinatários. Um número não pode se repetir.
-	Recipients []components.BroadcastRecipientsParamsUnion `json:"recipients,omitzero"`
-	Status     *UpdateBroadcastStatus                      `json:"status,omitzero"`
+	Recipients []components.BroadcastRecipientsParams `json:"recipients,omitzero"`
+	Status     *UpdateBroadcastStatus                 `json:"status,omitzero"`
 	// Confirma que os destinatários aceitaram receber estas mensagens.
 	ConsentConfirmed *bool `json:"consent_confirmed,omitzero"`
 }
@@ -66,7 +66,7 @@ func (u *UpdateBroadcastRequestBody) GetTemplate() *string {
 	return u.Template
 }
 
-func (u *UpdateBroadcastRequestBody) GetRecipients() []components.BroadcastRecipientsParamsUnion {
+func (u *UpdateBroadcastRequestBody) GetRecipients() []components.BroadcastRecipientsParams {
 	if u == nil {
 		return nil
 	}

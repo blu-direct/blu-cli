@@ -28,7 +28,7 @@ func initCreateBroadcastCmd(parent *cobra.Command) error {
 		Use:     "create-broadcast [phone-number]",
 		Short:   "Criar uma campanha",
 		Long:    "Permissão: `campaigns:write`.\n\nCria uma campanha da API oficial deste número como `draft` (rascunho),\ncom um modelo aprovado. Nada é enviado até a campanha ser atualizada com\n`status: sending`.",
-		Example: "  blu campanhas create-broadcast --phone-number pn_8f3aK1 --template tmpl_4Ld8 --recipients '[{\"contact\":\"cont_0b6f9a52-6a1e-4c1f-9d55-2f0b7e4c8a11\",\"variables\":{\"name\":\"Ana\"\x7d\x7d,{\"phone\":\"+5511988887777\",\"variables\":{\"name\":\"Bruno\"\x7d\x7d]'",
+		Example: "  blu campanhas create-broadcast --phone-number pn_8f3aK1 --template tmpl_4Ld8 --recipients '[{\"phone\":\"+5511988887777\",\"variables\":{\"name\":\"Ana\"\x7d\x7d,{\"phone\":\"+5511977776666\",\"variables\":{\"name\":\"Bruno\"\x7d\x7d]'",
 		Args:    flagutil.PositionalFlagArgs,
 		RunE:    runCreateBroadcastCmd,
 		Aliases: []string{"cb"},

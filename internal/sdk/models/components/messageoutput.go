@@ -39,18 +39,12 @@ type UnsupportedMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -111,13 +105,6 @@ func (u *UnsupportedMessage) GetStatus() MessageStatus {
 	return u.Status
 }
 
-func (u *UnsupportedMessage) GetErrors() []MessageError {
-	if u == nil {
-		return []MessageError{}
-	}
-	return u.Errors
-}
-
 func (u *UnsupportedMessage) GetContext() *MessageContext {
 	if u == nil {
 		return nil
@@ -137,20 +124,6 @@ func (u *UnsupportedMessage) GetMentions() []string {
 		return []string{}
 	}
 	return u.Mentions
-}
-
-func (u *UnsupportedMessage) GetBroadcast() *string {
-	if u == nil {
-		return nil
-	}
-	return u.Broadcast
-}
-
-func (u *UnsupportedMessage) GetPricing() *MessagePricing {
-	if u == nil {
-		return nil
-	}
-	return u.Pricing
 }
 
 func (u *UnsupportedMessage) GetWhatsappMessageID() *string {
@@ -234,18 +207,12 @@ type MessageTemplateMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -306,13 +273,6 @@ func (m *MessageTemplateMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageTemplateMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageTemplateMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -332,20 +292,6 @@ func (m *MessageTemplateMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageTemplateMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageTemplateMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageTemplateMessage) GetWhatsappMessageID() *string {
@@ -407,18 +353,12 @@ type MessagePollMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -479,13 +419,6 @@ func (m *MessagePollMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessagePollMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessagePollMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -505,20 +438,6 @@ func (m *MessagePollMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessagePollMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessagePollMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessagePollMessage) GetWhatsappMessageID() *string {
@@ -580,18 +499,12 @@ type MessageReactionMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -652,13 +565,6 @@ func (m *MessageReactionMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageReactionMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageReactionMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -678,20 +584,6 @@ func (m *MessageReactionMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageReactionMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageReactionMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageReactionMessage) GetWhatsappMessageID() *string {
@@ -760,42 +652,42 @@ func (p *Phone) GetWaID() string {
 	return p.WaID
 }
 
-type MessageContact struct {
+type Contact struct {
 	Name   Name    `json:"name"`
 	Phones []Phone `json:"phones"`
 }
 
-func (m MessageContact) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(m, "", false)
+func (c Contact) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
 }
 
-func (m *MessageContact) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &m, "", false, nil); err != nil {
+func (c *Contact) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (m *MessageContact) GetName() Name {
-	if m == nil {
+func (c *Contact) GetName() Name {
+	if c == nil {
 		return Name{}
 	}
-	return m.Name
+	return c.Name
 }
 
-func (m *MessageContact) GetPhones() []Phone {
-	if m == nil {
+func (c *Contact) GetPhones() []Phone {
+	if c == nil {
 		return []Phone{}
 	}
-	return m.Phones
+	return c.Phones
 }
 
 // ContactsMessage - Cartões de contato recebidos. Não podem ser enviados.
 type ContactsMessage struct {
 	//lint:ignore U1000 accessed via reflection for JSON marshaling
-	type_    string           `const:"contacts" json:"type"`
-	Contacts []MessageContact `json:"contacts"`
-	ID       string           `json:"id"`
+	type_    string    `const:"contacts" json:"type"`
+	Contacts []Contact `json:"contacts"`
+	ID       string    `json:"id"`
 	//lint:ignore U1000 accessed via reflection for JSON marshaling
 	object    string           `const:"message" json:"object"`
 	Chat      string           `json:"chat"`
@@ -804,18 +696,12 @@ type ContactsMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -837,9 +723,9 @@ func (c *ContactsMessage) GetType() string {
 	return "contacts"
 }
 
-func (c *ContactsMessage) GetContacts() []MessageContact {
+func (c *ContactsMessage) GetContacts() []Contact {
 	if c == nil {
-		return []MessageContact{}
+		return []Contact{}
 	}
 	return c.Contacts
 }
@@ -876,13 +762,6 @@ func (c *ContactsMessage) GetStatus() MessageStatus {
 	return c.Status
 }
 
-func (c *ContactsMessage) GetErrors() []MessageError {
-	if c == nil {
-		return []MessageError{}
-	}
-	return c.Errors
-}
-
 func (c *ContactsMessage) GetContext() *MessageContext {
 	if c == nil {
 		return nil
@@ -902,20 +781,6 @@ func (c *ContactsMessage) GetMentions() []string {
 		return []string{}
 	}
 	return c.Mentions
-}
-
-func (c *ContactsMessage) GetBroadcast() *string {
-	if c == nil {
-		return nil
-	}
-	return c.Broadcast
-}
-
-func (c *ContactsMessage) GetPricing() *MessagePricing {
-	if c == nil {
-		return nil
-	}
-	return c.Pricing
 }
 
 func (c *ContactsMessage) GetWhatsappMessageID() *string {
@@ -991,18 +856,12 @@ type MessageLocationMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1063,13 +922,6 @@ func (m *MessageLocationMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageLocationMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageLocationMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -1089,20 +941,6 @@ func (m *MessageLocationMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageLocationMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageLocationMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageLocationMessage) GetWhatsappMessageID() *string {
@@ -1135,18 +973,12 @@ type StickerMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1207,13 +1039,6 @@ func (s *StickerMessageOutput) GetStatus() MessageStatus {
 	return s.Status
 }
 
-func (s *StickerMessageOutput) GetErrors() []MessageError {
-	if s == nil {
-		return []MessageError{}
-	}
-	return s.Errors
-}
-
 func (s *StickerMessageOutput) GetContext() *MessageContext {
 	if s == nil {
 		return nil
@@ -1233,20 +1058,6 @@ func (s *StickerMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return s.Mentions
-}
-
-func (s *StickerMessageOutput) GetBroadcast() *string {
-	if s == nil {
-		return nil
-	}
-	return s.Broadcast
-}
-
-func (s *StickerMessageOutput) GetPricing() *MessagePricing {
-	if s == nil {
-		return nil
-	}
-	return s.Pricing
 }
 
 func (s *StickerMessageOutput) GetWhatsappMessageID() *string {
@@ -1316,18 +1127,12 @@ type DocumentMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1388,13 +1193,6 @@ func (d *DocumentMessageOutput) GetStatus() MessageStatus {
 	return d.Status
 }
 
-func (d *DocumentMessageOutput) GetErrors() []MessageError {
-	if d == nil {
-		return []MessageError{}
-	}
-	return d.Errors
-}
-
 func (d *DocumentMessageOutput) GetContext() *MessageContext {
 	if d == nil {
 		return nil
@@ -1414,20 +1212,6 @@ func (d *DocumentMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return d.Mentions
-}
-
-func (d *DocumentMessageOutput) GetBroadcast() *string {
-	if d == nil {
-		return nil
-	}
-	return d.Broadcast
-}
-
-func (d *DocumentMessageOutput) GetPricing() *MessagePricing {
-	if d == nil {
-		return nil
-	}
-	return d.Pricing
 }
 
 func (d *DocumentMessageOutput) GetWhatsappMessageID() *string {
@@ -1460,18 +1244,12 @@ type AudioMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1532,13 +1310,6 @@ func (a *AudioMessageOutput) GetStatus() MessageStatus {
 	return a.Status
 }
 
-func (a *AudioMessageOutput) GetErrors() []MessageError {
-	if a == nil {
-		return []MessageError{}
-	}
-	return a.Errors
-}
-
 func (a *AudioMessageOutput) GetContext() *MessageContext {
 	if a == nil {
 		return nil
@@ -1558,20 +1329,6 @@ func (a *AudioMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return a.Mentions
-}
-
-func (a *AudioMessageOutput) GetBroadcast() *string {
-	if a == nil {
-		return nil
-	}
-	return a.Broadcast
-}
-
-func (a *AudioMessageOutput) GetPricing() *MessagePricing {
-	if a == nil {
-		return nil
-	}
-	return a.Pricing
 }
 
 func (a *AudioMessageOutput) GetWhatsappMessageID() *string {
@@ -1633,18 +1390,12 @@ type VideoMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1705,13 +1456,6 @@ func (v *VideoMessageOutput) GetStatus() MessageStatus {
 	return v.Status
 }
 
-func (v *VideoMessageOutput) GetErrors() []MessageError {
-	if v == nil {
-		return []MessageError{}
-	}
-	return v.Errors
-}
-
 func (v *VideoMessageOutput) GetContext() *MessageContext {
 	if v == nil {
 		return nil
@@ -1731,20 +1475,6 @@ func (v *VideoMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return v.Mentions
-}
-
-func (v *VideoMessageOutput) GetBroadcast() *string {
-	if v == nil {
-		return nil
-	}
-	return v.Broadcast
-}
-
-func (v *VideoMessageOutput) GetPricing() *MessagePricing {
-	if v == nil {
-		return nil
-	}
-	return v.Pricing
 }
 
 func (v *VideoMessageOutput) GetWhatsappMessageID() *string {
@@ -1806,18 +1536,12 @@ type ImageMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -1878,13 +1602,6 @@ func (i *ImageMessageOutput) GetStatus() MessageStatus {
 	return i.Status
 }
 
-func (i *ImageMessageOutput) GetErrors() []MessageError {
-	if i == nil {
-		return []MessageError{}
-	}
-	return i.Errors
-}
-
 func (i *ImageMessageOutput) GetContext() *MessageContext {
 	if i == nil {
 		return nil
@@ -1904,20 +1621,6 @@ func (i *ImageMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return i.Mentions
-}
-
-func (i *ImageMessageOutput) GetBroadcast() *string {
-	if i == nil {
-		return nil
-	}
-	return i.Broadcast
-}
-
-func (i *ImageMessageOutput) GetPricing() *MessagePricing {
-	if i == nil {
-		return nil
-	}
-	return i.Pricing
 }
 
 func (i *ImageMessageOutput) GetWhatsappMessageID() *string {
@@ -1969,18 +1672,12 @@ type TextMessageOutput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -2041,13 +1738,6 @@ func (t *TextMessageOutput) GetStatus() MessageStatus {
 	return t.Status
 }
 
-func (t *TextMessageOutput) GetErrors() []MessageError {
-	if t == nil {
-		return []MessageError{}
-	}
-	return t.Errors
-}
-
 func (t *TextMessageOutput) GetContext() *MessageContext {
 	if t == nil {
 		return nil
@@ -2067,20 +1757,6 @@ func (t *TextMessageOutput) GetMentions() []string {
 		return []string{}
 	}
 	return t.Mentions
-}
-
-func (t *TextMessageOutput) GetBroadcast() *string {
-	if t == nil {
-		return nil
-	}
-	return t.Broadcast
-}
-
-func (t *TextMessageOutput) GetPricing() *MessagePricing {
-	if t == nil {
-		return nil
-	}
-	return t.Pricing
 }
 
 func (t *TextMessageOutput) GetWhatsappMessageID() *string {
@@ -2505,18 +2181,12 @@ type MessageTemplateMessageInput struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -2577,13 +2247,6 @@ func (m *MessageTemplateMessageInput) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageTemplateMessageInput) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageTemplateMessageInput) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -2603,20 +2266,6 @@ func (m *MessageTemplateMessageInput) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageTemplateMessageInput) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageTemplateMessageInput) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageTemplateMessageInput) GetWhatsappMessageID() *string {
@@ -2649,18 +2298,12 @@ type MessageStickerMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -2721,13 +2364,6 @@ func (m *MessageStickerMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageStickerMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageStickerMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -2747,20 +2383,6 @@ func (m *MessageStickerMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageStickerMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageStickerMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageStickerMessage) GetWhatsappMessageID() *string {
@@ -2838,18 +2460,12 @@ type MessageDocumentMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -2910,13 +2526,6 @@ func (m *MessageDocumentMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageDocumentMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageDocumentMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -2936,20 +2545,6 @@ func (m *MessageDocumentMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageDocumentMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageDocumentMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageDocumentMessage) GetWhatsappMessageID() *string {
@@ -2982,18 +2577,12 @@ type MessageAudioMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -3054,13 +2643,6 @@ func (m *MessageAudioMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageAudioMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageAudioMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -3080,20 +2662,6 @@ func (m *MessageAudioMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageAudioMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageAudioMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageAudioMessage) GetWhatsappMessageID() *string {
@@ -3172,18 +2740,12 @@ type MessageVideoMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -3244,13 +2806,6 @@ func (m *MessageVideoMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageVideoMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageVideoMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -3270,20 +2825,6 @@ func (m *MessageVideoMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageVideoMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageVideoMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageVideoMessage) GetWhatsappMessageID() *string {
@@ -3362,18 +2903,12 @@ type MessageImageMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -3434,13 +2969,6 @@ func (m *MessageImageMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageImageMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageImageMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -3460,20 +2988,6 @@ func (m *MessageImageMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageImageMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageImageMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageImageMessage) GetWhatsappMessageID() *string {
@@ -3534,18 +3048,12 @@ type MessageTextMessage struct {
 	// `sent`: uma mensagem enviada pelo seu número. `received`: uma mensagem
 	// recebida.
 	//
-	Status MessageStatus `json:"status"`
-	// Reservado para os motivos de falha. Hoje, sempre vazio.
-	Errors  []MessageError  `json:"errors"`
+	Status  MessageStatus   `json:"status"`
 	Context *MessageContext `json:"context"`
 	// Quem enviou a mensagem. Nulo nas mensagens enviadas pelo seu número.
 	From *MessageSender `json:"from"`
 	// Os `wa_id` mencionados com @ no texto ou na legenda.
 	Mentions []string `json:"mentions"`
-	// Reservado para a campanha que enviou a mensagem. Hoje, sempre nulo.
-	Broadcast *string `json:"broadcast"`
-	// Reservado para como a Meta cobra a mensagem. Hoje, sempre nulo.
-	Pricing *MessagePricing `json:"pricing"`
 	// O id da mensagem no próprio WhatsApp.
 	WhatsappMessageID *string `json:"whatsapp_message_id"`
 	// Horário Unix em segundos.
@@ -3606,13 +3114,6 @@ func (m *MessageTextMessage) GetStatus() MessageStatus {
 	return m.Status
 }
 
-func (m *MessageTextMessage) GetErrors() []MessageError {
-	if m == nil {
-		return []MessageError{}
-	}
-	return m.Errors
-}
-
 func (m *MessageTextMessage) GetContext() *MessageContext {
 	if m == nil {
 		return nil
@@ -3632,20 +3133,6 @@ func (m *MessageTextMessage) GetMentions() []string {
 		return []string{}
 	}
 	return m.Mentions
-}
-
-func (m *MessageTextMessage) GetBroadcast() *string {
-	if m == nil {
-		return nil
-	}
-	return m.Broadcast
-}
-
-func (m *MessageTextMessage) GetPricing() *MessagePricing {
-	if m == nil {
-		return nil
-	}
-	return m.Pricing
 }
 
 func (m *MessageTextMessage) GetWhatsappMessageID() *string {

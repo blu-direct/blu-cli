@@ -9,7 +9,7 @@ Command-line interface for the *API do blü* API.
 <!-- Start Summary [summary] -->
 ## Summary
 
-API do blü: Envie e receba mensagens no WhatsApp, gerencie contatos, funis, agentes de IA e campanhas.
+API do blü: Envie e receba mensagens no WhatsApp, gerencie agentes de IA, campanhas e webhooks.
 
 A API do blü segue o modelo REST. Ela usa URLs previsíveis e orientadas a
 recursos, recebe corpos de requisição em JSON, devolve respostas em JSON e
@@ -19,10 +19,8 @@ usa códigos de status, autenticação e métodos HTTP padrão.
 
 A API usa os mesmos termos do WhatsApp. Um **número** é um número de
 WhatsApp conectado à sua conta. Uma **conversa** liga um dos seus números a
-um `wa_id` e reúne as **mensagens** trocadas entre eles. Um **contato** é
-uma pessoa do CRM, única na conta mesmo quando conversa com vários dos seus
-números. Uma **campanha** envia um modelo de mensagem aprovado para vários
-destinatários.
+um `wa_id` e reúne as **mensagens** trocadas entre eles. Uma **campanha**
+envia um modelo de mensagem aprovado para vários destinatários.
 
 ## Tipos de plataforma
 
@@ -38,14 +36,11 @@ Cada chave de API tem permissões, e cada endpoint informa a que exige:
 
 | Permissão | Permite |
 | --- | --- |
-| `phone_numbers:read` | Consultar os números e o risco de campanha deles. |
-| `phone_numbers:write` | Renomear os números e escolher o agente, o fluxo e os atendentes de cada um. |
-| `inbox:read` | Consultar conversas, mensagens, mídias, memórias e mensagens agendadas. |
-| `inbox:write` | Abrir e atualizar conversas, enviar e apagar mensagens, enviar mídias. |
-| `crm:read` | Consultar contatos, campos personalizados, funis e cards. |
-| `crm:write` | Criar, alterar e excluir contatos, campos personalizados, funis e cards. |
-| `agents:read` | Consultar agentes, simular respostas e gerar sugestões de instruções. |
-| `agents:write` | Criar, alterar e excluir agentes. |
+| `phone_numbers:read` | Consultar os números de WhatsApp conectados. |
+| `inbox:read` | Consultar conversas, mensagens e mídias. |
+| `inbox:write` | Abrir e atualizar conversas, enviar mensagens e enviar mídias. |
+| `agents:read` | Consultar agentes de IA. |
+| `agents:write` | Alterar agentes de IA. |
 | `campaigns:read` | Consultar modelos de mensagem, campanhas e custos. |
 | `campaigns:write` | Criar e excluir modelos e preparar campanhas. |
 | `campaigns:send` | Iniciar campanhas, junto com `campaigns:write`. |
@@ -63,12 +58,11 @@ que pertence a eles, não são encontrados (`404`).
   `POST /v1/phone_numbers/{phone_number}/chats`. As listas gerais, como
   `GET /v1/chats`, aceitam `phone_number` para filtrar por número.
 - `POST` numa coleção cria e devolve `201`; `PATCH` num objeto atualiza os
-  campos enviados; `PUT` numa ordem a substitui; `DELETE` exclui e devolve
-  `204`, sem corpo.
+  campos enviados; `DELETE` exclui e devolve `204`, sem corpo.
 - **Listas** devolvem um objeto de lista com `has_more`. A maioria é
-  paginada por cursor, com `limit`, `starting_after` e `ending_before`. As
-  de contatos e de destinatários de campanha são paginadas com `limit` e
-  `offset` e também devolvem `total`.
+  paginada por cursor, com `limit`, `starting_after` e `ending_before`. A
+  de destinatários de campanha é paginada com `limit` e `offset` e também
+  devolve `total`.
 - **Limite de requisições**: as respostas trazem `X-RateLimit-Limit`,
   `X-RateLimit-Remaining` e `X-RateLimit-Reset`. Acima do limite, a resposta
   é `429 rate_limit_exceeded`, com `Retry-After` em segundos.
@@ -186,11 +180,11 @@ This CLI is built to be driven by AI coding agents as well as people: everything
 
 | Run | You get |
 |-----|---------|
-| `blu --help`, `blu campos-personalizados list-custom-fields --help` | Commands by category, runnable examples, flags |
-| `blu --usage`, `blu campos-personalizados list-custom-fields --usage` | The command surface as machine-readable [KDL](https://kdl.dev): commands, aliases, flags, defaults, env vars, config keys |
-| `blu contatos create-contact --schema` | The exact JSON Schema of the command's request body (all `$ref`s bundled) — build a valid `--body` from it |
-| `blu campos-personalizados list-custom-fields --dry-run` | The exact HTTP request (method, URL, headers, body), with no credentials or network call |
-| `blu campos-personalizados list-custom-fields --output-format json` (or `--jq`) | Machine-readable output |
+| `blu --help`, `blu agentes list-agents --help` | Commands by category, runnable examples, flags |
+| `blu --usage`, `blu agentes list-agents --usage` | The command surface as machine-readable [KDL](https://kdl.dev): commands, aliases, flags, defaults, env vars, config keys |
+| `blu agentes update-agent --schema` | The exact JSON Schema of the command's request body (all `$ref`s bundled) — build a valid `--body` from it |
+| `blu agentes list-agents --dry-run` | The exact HTTP request (method, URL, headers, body), with no credentials or network call |
+| `blu agentes list-agents --output-format json` (or `--jq`) | Machine-readable output |
 
 ### Discover the command surface
 
@@ -199,7 +193,7 @@ This CLI is built to be driven by AI coding agents as well as people: everything
 blu --usage
 
 # One command's subtree only
-blu campos-personalizados list-custom-fields --usage
+blu agentes list-agents --usage
 ```
 
 ### Read the exact request schema
@@ -208,7 +202,7 @@ blu campos-personalizados list-custom-fields --usage
 
 ```bash
 # JSON Schema (draft 2020-12) of the request body, with every $ref bundled under $defs
-blu contatos create-contact --schema
+blu agentes update-agent --schema
 ```
 
 ### Probe before you spend
@@ -217,10 +211,10 @@ Start quota-spending commands with `--dry-run`. It validates inputs, resolves th
 
 ```bash
 # Human preview: the [DRY-RUN] block is on stderr and stdout is empty
-blu campos-personalizados list-custom-fields --dry-run
+blu agentes list-agents --dry-run
 
 # Machine preview: compact JSON on stdout and silent stderr
-blu campos-personalizados list-custom-fields --dry-run --output-format json
+blu agentes list-agents --dry-run --output-format json
 ```
 
 The machine form writes one object per would-be request, one per line (NDJSON for multi-request commands), with exactly this shape:
@@ -237,13 +231,13 @@ Local mutation commands make no request under `--dry-run`: instead of a preview 
 
 ```bash
 # JSON on stdout
-blu campos-personalizados list-custom-fields --output-format json
+blu agentes list-agents --output-format json
 
 # Filter or reshape with a jq expression (always emits JSON, overrides --output-format)
-blu campos-personalizados list-custom-fields --jq '.'
+blu agentes list-agents --jq '.'
 
 # Print jq string results as plain text instead of JSON strings (like jq -r)
-blu campos-personalizados list-custom-fields --jq '.' --raw-output
+blu agentes list-agents --jq '.' --raw-output
 ```
 
 `--output-format toon` emits [TOON](https://github.com/toon-format/spec), a compact line-oriented format that uses fewer tokens than JSON; it is the default in agent mode.
@@ -253,7 +247,7 @@ Required-input prompts and guided `configure` / `auth login` forms are enabled b
 
 ```bash
 # Prompt for missing command inputs
-blu campos-personalizados list-custom-fields --interactive
+blu agentes list-agents --interactive
 
 # Open the guided configuration form
 blu configure --interactive
@@ -291,7 +285,7 @@ Authentication credentials can be configured in four ways (in order of priority)
 Pass credentials directly as flags to any command:
 
 ```bash
-blu --secret-key "$BLU_SECRET_KEY" campos-personalizados list-custom-fields
+blu --secret-key "$BLU_SECRET_KEY" agentes list-agents
 ```
 
 ### 2. Environment variables
@@ -341,68 +335,25 @@ Configuration is stored in `~/.config/blu/config.yaml`.
 * [`numeros`](docs/blu_numeros.md) - Números de WhatsApp conectados à sua conta
   * [`list-phone-numbers`](docs/blu_numeros_list-phone-numbers.md) - Listar números
   * [`get-phone-number`](docs/blu_numeros_get-phone-number.md) - Consultar um número
-  * [`update-phone-number`](docs/blu_numeros_update-phone-number.md) - Atualizar um número
-  * [`get-campaign-risk`](docs/blu_numeros_get-campaign-risk.md) - Estimar o risco de uma campanha
-* [`conversas`](docs/blu_conversas.md) - Conversas entre um dos seus números e um `wa_id`, com o que o agente de IA guarda e agenda em cada uma
+* [`conversas`](docs/blu_conversas.md) - Conversas entre um dos seus números e um `wa_id`
   * [`create-chat`](docs/blu_conversas_create-chat.md) - Abrir uma conversa
   * [`list-chats`](docs/blu_conversas_list-chats.md) - Listar conversas
   * [`get-chat`](docs/blu_conversas_get-chat.md) - Consultar uma conversa
   * [`update-chat`](docs/blu_conversas_update-chat.md) - Atualizar uma conversa
-  * [`list-memories`](docs/blu_conversas_list-memories.md) - Listar as memórias de uma conversa
-  * [`delete-memory`](docs/blu_conversas_delete-memory.md) - Excluir uma memória
-  * [`list-scheduled-messages`](docs/blu_conversas_list-scheduled-messages.md) - Listar as mensagens agendadas de uma conversa
-  * [`cancel-scheduled-message`](docs/blu_conversas_cancel-scheduled-message.md) - Cancelar uma mensagem agendada
 * [`mensagens`](docs/blu_mensagens.md) - Mensagens enviadas e recebidas em uma conversa
   * [`list-messages`](docs/blu_mensagens_list-messages.md) - Listar as mensagens de uma conversa
   * [`send-message`](docs/blu_mensagens_send-message.md) - Enviar uma mensagem
   * [`get-message`](docs/blu_mensagens_get-message.md) - Consultar uma mensagem
-  * [`delete-message`](docs/blu_mensagens_delete-message.md) - Apagar uma mensagem para todos
 * [`midia`](docs/blu_midia.md) - Arquivos usados em mensagens
   * [`create-media`](docs/blu_midia_create-media.md) - Enviar mídia
   * [`get-media`](docs/blu_midia_get-media.md) - Consultar mídia
-* [`contatos`](docs/blu_contatos.md) - As pessoas do CRM, únicas na conta
-  * [`list-contacts`](docs/blu_contatos_list-contacts.md) - Listar contatos
-  * [`create-contact`](docs/blu_contatos_create-contact.md) - Criar um contato
-  * [`get-contact`](docs/blu_contatos_get-contact.md) - Consultar um contato
-  * [`update-contact`](docs/blu_contatos_update-contact.md) - Atualizar um contato
-  * [`delete-contact`](docs/blu_contatos_delete-contact.md) - Excluir um contato
-  * [`import-contacts`](docs/blu_contatos_import-contacts.md) - Importar contatos
-* [`campos-personalizados`](docs/blu_campos-personalizados.md) - Campos que você define para guardar dados dos contatos
-  * [`list-custom-fields`](docs/blu_campos-personalizados_list-custom-fields.md) - Listar campos personalizados
-  * [`create-custom-field`](docs/blu_campos-personalizados_create-custom-field.md) - Criar um campo personalizado
-  * [`reorder-custom-fields`](docs/blu_campos-personalizados_reorder-custom-fields.md) - Reordenar campos personalizados
-  * [`update-custom-field`](docs/blu_campos-personalizados_update-custom-field.md) - Atualizar um campo personalizado
-  * [`delete-custom-field`](docs/blu_campos-personalizados_delete-custom-field.md) - Excluir um campo personalizado
-* [`funis`](docs/blu_funis.md) - Funis do CRM, com suas etapas e etiquetas
-  * [`list-pipelines`](docs/blu_funis_list-pipelines.md) - Listar funis
-  * [`create-pipeline`](docs/blu_funis_create-pipeline.md) - Criar um funil
-  * [`get-pipeline`](docs/blu_funis_get-pipeline.md) - Consultar um funil
-  * [`update-pipeline`](docs/blu_funis_update-pipeline.md) - Atualizar um funil
-  * [`delete-pipeline`](docs/blu_funis_delete-pipeline.md) - Excluir um funil
-  * [`create-stage`](docs/blu_funis_create-stage.md) - Criar uma etapa
-  * [`reorder-stages`](docs/blu_funis_reorder-stages.md) - Reordenar as etapas
-  * [`update-stage`](docs/blu_funis_update-stage.md) - Atualizar uma etapa
-  * [`delete-stage`](docs/blu_funis_delete-stage.md) - Excluir uma etapa
-  * [`create-tag`](docs/blu_funis_create-tag.md) - Criar uma etiqueta
-  * [`update-tag`](docs/blu_funis_update-tag.md) - Atualizar uma etiqueta
-  * [`delete-tag`](docs/blu_funis_delete-tag.md) - Excluir uma etiqueta
-* [`cards`](docs/blu_cards.md) - Contatos em um funil, cada um em uma etapa
-  * [`list`](docs/blu_cards_list.md) - Listar os cards de um funil
-  * [`create`](docs/blu_cards_create.md) - Colocar um contato no funil
-  * [`update`](docs/blu_cards_update.md) - Atualizar um card
-  * [`delete`](docs/blu_cards_delete.md) - Tirar um contato do funil
 * [`agentes`](docs/blu_agentes.md) - Agentes de IA que respondem às conversas
   * [`list-agents`](docs/blu_agentes_list-agents.md) - Listar agentes
-  * [`create-agent`](docs/blu_agentes_create-agent.md) - Criar um agente
   * [`get-agent`](docs/blu_agentes_get-agent.md) - Consultar um agente
   * [`update-agent`](docs/blu_agentes_update-agent.md) - Atualizar um agente
-  * [`delete-agent`](docs/blu_agentes_delete-agent.md) - Excluir um agente
-  * [`simulate-agent`](docs/blu_agentes_simulate-agent.md) - Simular um agente
-  * [`suggest-agent-instructions`](docs/blu_agentes_suggest-agent-instructions.md) - Sugerir instruções
 * [`modelos-de-mensagem`](docs/blu_modelos-de-mensagem.md) - Mensagens aprovadas pela Meta, da conta do WhatsApp Business de um número `cloud_api` ou `coexistence`
   * [`list-message-templates`](docs/blu_modelos-de-mensagem_list-message-templates.md) - Listar os modelos de mensagem de um número
   * [`create-message-template`](docs/blu_modelos-de-mensagem_create-message-template.md) - Criar um modelo de mensagem
-  * [`sync-message-templates`](docs/blu_modelos-de-mensagem_sync-message-templates.md) - Sincronizar os modelos com a Meta
   * [`get-message-template`](docs/blu_modelos-de-mensagem_get-message-template.md) - Consultar um modelo de mensagem
   * [`delete-message-template`](docs/blu_modelos-de-mensagem_delete-message-template.md) - Excluir um modelo de mensagem
 * [`campanhas`](docs/blu_campanhas.md) - Um modelo de mensagem enviado para vários destinatários
@@ -426,65 +377,7 @@ Configuration is stored in `~/.config/blu/config.yaml`.
 <!-- Start Request Body Input [stdinpiping] -->
 ## Request Body Input
 
-Commands that accept a request body take it three ways, with a clear priority chain. The examples use `blu contatos create-contact`; every body-bearing command works the same way and prints its exact request schema with `--schema`.
-
-### Individual flags (highest priority)
-
-Each top-level body field is a flag:
-
-```bash
-blu contatos create-contact --phone '+5511988887777'
-```
-
-### `--body` flag
-
-Provide the entire request body as a JSON string:
-
-```bash
-blu contatos create-contact --body '{"phone":"+5511988887777","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}'
-```
-
-Individual flags override `--body` values:
-
-```bash
-# Sends {"phone":"+5511988887777 (updated)","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}
-blu contatos create-contact --body '{"phone":"+5511988887777","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}' --phone '+5511988887777 (updated)'
-```
-
-### Stdin piping (lowest priority)
-
-Pipe JSON into any command that accepts a request body:
-
-```bash
-echo '{"phone":"+5511988887777","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}' | blu contatos create-contact
-```
-
-Individual flags override stdin values:
-
-```bash
-# Sends {"phone":"+5511988887777 (updated)","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}
-echo '{"phone":"+5511988887777","custom_fields":{"cf_7d1e2c34-0a6b-4f3e-9c1d-5b2a8e9f0c11":"Plano anual"}}' | blu contatos create-contact --phone '+5511988887777 (updated)'
-```
-
-This is useful for chaining commands, reading from files, or scripting:
-
-```bash
-# Read body from a file
-blu contatos create-contact < request.json
-
-# Pipe from another command
-curl -s https://example.com/request.json | blu contatos create-contact
-```
-
-### Priority
-
-When multiple input methods are used, the priority is:
-
-| Priority | Source | Description |
-|----------|--------|-------------|
-| 1 (highest) | Individual flags | `--phone ...` always wins |
-| 2 | `--body` flag | Whole-body JSON via flag |
-| 3 (lowest) | Stdin | Piped JSON input |
+Commands that accept a request body take it three ways, with a clear priority chain: individual field flags (highest priority), the whole body as JSON via `--body`, and JSON piped on stdin (lowest priority). Later sources never override earlier ones; a body-bearing command prints its exact request schema with `--schema`.
 <!-- End Request Body Input [stdinpiping] -->
 
 <!-- Start Server Selection [server] -->
@@ -495,7 +388,7 @@ When multiple input methods are used, the priority is:
 Use `--server-url` to override the server URL entirely, bypassing any named or indexed server selection:
 
 ```bash
-blu --server-url https://custom-api.example.com campos-personalizados list-custom-fields
+blu --server-url https://custom-api.example.com agentes list-agents
 ```
 
 **Precedence**: `--server-url` > `--server` > default
@@ -518,16 +411,16 @@ Every command supports a `--output-format` flag that controls how the response i
 
 ```bash
 # Default pretty output
-blu campos-personalizados list-custom-fields
+blu agentes list-agents
 
 # Machine-readable JSON
-blu campos-personalizados list-custom-fields --output-format json
+blu agentes list-agents --output-format json
 
 # TOON for LLM-friendly compact output
-blu campos-personalizados list-custom-fields --output-format toon
+blu agentes list-agents --output-format toon
 
 # Pipe JSON to jq without using --output-format
-blu campos-personalizados list-custom-fields --output-format json | jq '.'
+blu agentes list-agents --output-format json | jq '.'
 ```
 
 ### jq filtering
@@ -536,10 +429,10 @@ Use `--jq` to filter or transform the response inline using a [jq](https://jqlan
 
 ```bash
 # Extract a single field
-blu campos-personalizados list-custom-fields --jq '.'
+blu agentes list-agents --jq '.'
 
 # Reshape with any jq program; --raw-output prints string results as plain text (like jq -r)
-blu campos-personalizados list-custom-fields --jq '.' --raw-output
+blu agentes list-agents --jq '.' --raw-output
 ```
 
 ### Color control
@@ -582,7 +475,7 @@ On success, the response data is printed to **stdout** as JSON. On failure, erro
 
 ```bash
 # Capture output and handle errors
-blu campos-personalizados list-custom-fields --output-format json > output.json 2> error.log
+blu agentes list-agents --output-format json > output.json 2> error.log
 if [ $? -ne 0 ]; then
   echo "Error occurred, see error.log"
 fi
@@ -600,7 +493,7 @@ The CLI includes two diagnostic flags available on all commands:
 Preview what would be sent without making any network calls:
 
 ```bash
-blu campos-personalizados list-custom-fields --dry-run
+blu agentes list-agents --dry-run
 ```
 
 In human output modes, stdout is empty and the `[DRY-RUN]` block goes to stderr. It includes:
@@ -623,7 +516,7 @@ Local mutation commands emit one `{"dry_run":true,"local":true,"command":"…","
 Log request and response diagnostics while running normally:
 
 ```bash
-blu campos-personalizados list-custom-fields --debug
+blu agentes list-agents --debug
 ```
 
 Debug output goes to stderr and includes:

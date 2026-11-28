@@ -33,10 +33,6 @@ func InitModelosDeMensagemRoot(parent *cobra.Command) error {
 		return err
 	}
 
-	if err := initSyncMessageTemplatesCmd(ModelosDeMensagemCmd); err != nil {
-		return err
-	}
-
 	if err := initGetMessageTemplateCmd(ModelosDeMensagemCmd); err != nil {
 		return err
 	}

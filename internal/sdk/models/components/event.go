@@ -71,12 +71,7 @@ type Event struct {
 	ID string `json:"id"`
 	//lint:ignore U1000 accessed via reflection for JSON marshaling
 	object string `const:"event" json:"object"`
-	// - `message.received`: chegou uma mensagem. `data.object` é a mensagem.
-	//
-	// Também podem ser assinados, mas ainda não são enviados:
-	// `message.updated`, `phone_number.connected`,
-	// `phone_number.disconnected`, `broadcast.completed` e `broadcast.failed`.
-	//
+	// `message.received`: chegou uma mensagem. `data.object` é a mensagem.
 	Type EventType `json:"type"`
 	// O número em que o evento aconteceu.
 	PhoneNumber string `json:"phone_number"`
