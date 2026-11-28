@@ -7,8 +7,8 @@ management:
   generationVersion: internal
   releaseVersion: 0.1.0
   configChecksum: cff700984ed95241522ad9797359ce4c
-  repoURL: "https://github.com/blu-direct/blu-cli\r"
-  installationURL: "https://github.com/blu-direct/blu-cli\r"
+  repoURL: https://github.com/blu-direct/blu-cli
+  installationURL: https://github.com/blu-direct/blu-cli
   published: true
 features:
   cli:
